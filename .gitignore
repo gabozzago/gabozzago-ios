@@ -1,5 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,macos,xcode,firebase,objective-c,cocoapods
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,swiftpackagemanager,macos,xcode,firebase,objective-c,cocoapods
+
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,swift,objective-c,macos,swiftpackagemanager,swiftpm,cocoapods,git,fastlane,homebrew
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift,objective-c,macos,swiftpackagemanager,swiftpm,cocoapods,git,fastlane,homebrew
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -9,14 +10,49 @@
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
 
-### Firebase ###
-.idea
-**/node_modules/*
-**/.firebaserc
+### fastlane ###
+# fastlane - A streamlined workflow tool for Cocoa deployment
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-### Firebase Patch ###
-.runtimeconfig.json
-.firebase/
+# fastlane specific
+fastlane/report.xml
+GoogleService-Info.plist
+Plists+GCMS.swift
+
+# deliver temporary files
+fastlane/Preview.html
+
+# snapshot generated screenshots
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+
+# scan temporary files
+fastlane/test_output
+
+# Fastlane.swift runner binary
+fastlane/FastlaneRunner
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+### Homebrew ###
+Brewfile.lock.json
 
 ### macOS ###
 # General
@@ -47,13 +83,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### macOS Patch ###
-# iCloud generated files
-*.icloud
-
 ### Objective-C ###
 # Xcode
-#
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
@@ -104,10 +135,6 @@ Carthage/Build/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
 
 # Code Injection
 # After new code Injection tools there's a generated folder /iOSInjectionProject
@@ -146,9 +173,9 @@ playground.xcworkspace
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-# Pods/
+Pods/
 # Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+*.xcworkspace
 
 # Carthage
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
@@ -177,16 +204,24 @@ xcuserdata
 *.xcodeproj
 
 
-### Xcode ###
+### SwiftPM ###
 
-## Xcode 8 and earlier
+
+### Xcode ###
+# Xcode
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+
+
+
+## Gcc Patch
+/*.gcno
 
 ### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
-/*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,macos,xcode,firebase,objective-c,cocoapods
+# End of https://www.toptal.com/developers/gitignore/api/xcode,swift,objective-c,macos,swiftpackagemanager,swiftpm,cocoapods,git,fastlane,homebrew
