@@ -3,29 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC3A431A287C12A700FAA93B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A4319287C12A700FAA93B /* AppDelegate.swift */; };
-		BC3A431C287C12A700FAA93B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A431B287C12A700FAA93B /* SceneDelegate.swift */; };
-		BC3A431E287C12A800FAA93B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A431D287C12A700FAA93B /* ViewController.swift */; };
-		BC3A4323287C12A900FAA93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3A4322287C12A900FAA93B /* Assets.xcassets */; };
-		BC3A4326287C12A900FAA93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3A4324287C12A900FAA93B /* LaunchScreen.storyboard */; };
+		35CA8B31EF822C2CDD5CCBE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CB65408EE4FA6B07BA4550 /* SceneDelegate.swift */; };
+		92E495E1C398F05A2683B33D /* TuistBundle+gabozago-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248D8FC7F1F5FE6448D4E0E4 /* TuistBundle+gabozago-iOS.swift */; };
+		96F9D740EA6D3DE6D4C5BFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64E4A1EB9698AE927D28EA4B /* Assets.xcassets */; };
+		AD2E6CCD96ED25AC465FFA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB16ABBDA51B8F2E9C81FD3 /* LaunchScreen.storyboard */; };
+		C240F355AF4296859728920D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB972448254FFFDA1FE1E53 /* ViewController.swift */; };
+		D44B2FC316F29EF945E70323 /* TuistAssets+GabozagoIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C0B4EE18E8E60FEE908F8 /* TuistAssets+GabozagoIOS.swift */; };
+		E28AA423CC0E05D4BEE9674A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB656B3448312E556FBB7E /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		98DBCC58DC861096A61E64D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		BC3A4316287C12A700FAA93B /* gabozago-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gabozago-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC3A4319287C12A700FAA93B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC3A431B287C12A700FAA93B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC3A431D287C12A700FAA93B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC3A4322287C12A900FAA93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC3A4325287C12A900FAA93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC3A4327287C12A900FAA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		248D8FC7F1F5FE6448D4E0E4 /* TuistBundle+gabozago-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+gabozago-iOS.swift"; sourceTree = "<group>"; };
+		64E4A1EB9698AE927D28EA4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93CB65408EE4FA6B07BA4550 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AFDE9D68A7A24F0E9316A08D /* gabozago_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gabozago_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90C0B4EE18E8E60FEE908F8 /* TuistAssets+GabozagoIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+GabozagoIOS.swift"; sourceTree = "<group>"; };
+		CBB972448254FFFDA1FE1E53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCD5F7088830493C9CBD6322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EAEB656B3448312E556FBB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9230ADD5DB40D6B56E67E83 /* gabozago-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gabozago-iOS.entitlements"; sourceTree = "<group>"; };
+		FD77CEE28DBEB3FBD794DFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC3A4313287C12A700FAA93B /* Frameworks */ = {
+		BE66F5A725316A6C12936A34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,166 +53,203 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC3A430D287C12A700FAA93B = {
+		0406ABBE5D821A604CD1DF1C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BC3A4318287C12A700FAA93B /* Project */,
-				BC3A4317287C12A700FAA93B /* Products */,
+				B90C0B4EE18E8E60FEE908F8 /* TuistAssets+GabozagoIOS.swift */,
+				248D8FC7F1F5FE6448D4E0E4 /* TuistBundle+gabozago-iOS.swift */,
 			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		BC3A4317287C12A700FAA93B /* Products */ = {
+		0543FFCFBCA3A57E037E0EB1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BC3A4316287C12A700FAA93B /* gabozago-iOS.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BC3A4318287C12A700FAA93B /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				BC3A432E287C13CD00FAA93B /* Source */,
-				BC3A432D287C138800FAA93B /* Resource */,
-				BC3A432F287C13E700FAA93B /* Support */,
-			);
-			path = Project;
-			sourceTree = "<group>";
-		};
-		BC3A432D287C138800FAA93B /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				BC3A4322287C12A900FAA93B /* Assets.xcassets */,
-				BC3A4324287C12A900FAA93B /* LaunchScreen.storyboard */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		BC3A432E287C13CD00FAA93B /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				BC3A4330287C141C00FAA93B /* App */,
-				BC3A4331287C144100FAA93B /* Presentation */,
+				327CF3E79A18A57F482B0869 /* App */,
+				1FBE6ED1439D0BBCE6D3ADC6 /* Presentation */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		BC3A432F287C13E700FAA93B /* Support */ = {
+		0B6CA8BBB942D47C68C47B4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC3A4327287C12A900FAA93B /* Info.plist */,
 			);
-			path = Support;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC3A4330287C141C00FAA93B /* App */ = {
+		1FBE6ED1439D0BBCE6D3ADC6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BC3A4319287C12A700FAA93B /* AppDelegate.swift */,
-				BC3A431B287C12A700FAA93B /* SceneDelegate.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		BC3A4331287C144100FAA93B /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				BC3A4332287C145D00FAA93B /* Scene */,
+				D72FA758DCEF86FCFB4CB05B /* Scene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		BC3A4332287C145D00FAA93B /* Scene */ = {
+		327CF3E79A18A57F482B0869 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				BC3A431D287C12A700FAA93B /* ViewController.swift */,
+				EAEB656B3448312E556FBB7E /* AppDelegate.swift */,
+				93CB65408EE4FA6B07BA4550 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4C0970D0EEAEF46D3601FE16 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F9230ADD5DB40D6B56E67E83 /* gabozago-iOS.entitlements */,
+				DCD5F7088830493C9CBD6322 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		8AA4DC1B8EE49D25C686070D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFDE9D68A7A24F0E9316A08D /* gabozago_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		919D183E4995A789EB9BCC03 = {
+			isa = PBXGroup;
+			children = (
+				D5B5641C526418FB0025C40D /* Project */,
+				0B6CA8BBB942D47C68C47B4B /* Frameworks */,
+				8AA4DC1B8EE49D25C686070D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98921D34A5C1D65F485882AC /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				E0EC0499ACD3B2B1AC97714A /* Resource */,
+				0543FFCFBCA3A57E037E0EB1 /* Source */,
+				4C0970D0EEAEF46D3601FE16 /* Support */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		BB2396D79A160C3E5D968C2F /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				0406ABBE5D821A604CD1DF1C /* Sources */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		D5B5641C526418FB0025C40D /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				BB2396D79A160C3E5D968C2F /* Derived */,
+				98921D34A5C1D65F485882AC /* Project */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		D72FA758DCEF86FCFB4CB05B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CBB972448254FFFDA1FE1E53 /* ViewController.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		E0EC0499ACD3B2B1AC97714A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1FB16ABBDA51B8F2E9C81FD3 /* LaunchScreen.storyboard */,
+				64E4A1EB9698AE927D28EA4B /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC3A4315287C12A700FAA93B /* gabozago-iOS */ = {
+		D6B359E2CAD5F115D91A1100 /* gabozago-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC3A432A287C12A900FAA93B /* Build configuration list for PBXNativeTarget "gabozago-iOS" */;
+			buildConfigurationList = 64EB0B976961DD3AC36D79BB /* Build configuration list for PBXNativeTarget "gabozago-iOS" */;
 			buildPhases = (
-				BC3A4312287C12A700FAA93B /* Sources */,
-				BC3A4313287C12A700FAA93B /* Frameworks */,
-				BC3A4314287C12A700FAA93B /* Resources */,
+				928EF1C614B23164C485CFA1 /* Sources */,
+				B8C37B4D534FEC370A1D5AEA /* Resources */,
+				98DBCC58DC861096A61E64D8 /* Embed Frameworks */,
+				BE66F5A725316A6C12936A34 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "gabozago-iOS";
-			productName = "gabozago-iOS";
-			productReference = BC3A4316287C12A700FAA93B /* gabozago-iOS.app */;
+			productName = gabozago_iOS;
+			productReference = AFDE9D68A7A24F0E9316A08D /* gabozago_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC3A430E287C12A700FAA93B /* Project object */ = {
+		06BF69C0A08D6EFD3DF1E524 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = com.wwg;
 				TargetAttributes = {
-					BC3A4315287C12A700FAA93B = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 				};
 			};
-			buildConfigurationList = BC3A4311287C12A700FAA93B /* Build configuration list for PBXProject "gabozago-iOS" */;
+			buildConfigurationList = 092F2F64FCF456394CE67CC1 /* Build configuration list for PBXProject "gabozago-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = BC3A430D287C12A700FAA93B;
-			productRefGroup = BC3A4317287C12A700FAA93B /* Products */;
+			mainGroup = 919D183E4995A789EB9BCC03;
+			packageReferences = (
+				55A215857AEC6CA7C54584AD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B9F58701B5702089ACBDE05C /* XCRemoteSwiftPackageReference "Then" */,
+			);
+			productRefGroup = 8AA4DC1B8EE49D25C686070D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC3A4315287C12A700FAA93B /* gabozago-iOS */,
+				D6B359E2CAD5F115D91A1100 /* gabozago-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC3A4314287C12A700FAA93B /* Resources */ = {
+		B8C37B4D534FEC370A1D5AEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC3A4326287C12A900FAA93B /* LaunchScreen.storyboard in Resources */,
-				BC3A4323287C12A900FAA93B /* Assets.xcassets in Resources */,
+				96F9D740EA6D3DE6D4C5BFEC /* Assets.xcassets in Resources */,
+				AD2E6CCD96ED25AC465FFA8E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC3A4312287C12A700FAA93B /* Sources */ = {
+		928EF1C614B23164C485CFA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC3A431E287C12A800FAA93B /* ViewController.swift in Sources */,
-				BC3A431A287C12A700FAA93B /* AppDelegate.swift in Sources */,
-				BC3A431C287C12A700FAA93B /* SceneDelegate.swift in Sources */,
+				D44B2FC316F29EF945E70323 /* TuistAssets+GabozagoIOS.swift in Sources */,
+				92E495E1C398F05A2683B33D /* TuistBundle+gabozago-iOS.swift in Sources */,
+				E28AA423CC0E05D4BEE9674A /* AppDelegate.swift in Sources */,
+				35CA8B31EF822C2CDD5CCBE9 /* SceneDelegate.swift in Sources */,
+				C240F355AF4296859728920D /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BC3A4324287C12A900FAA93B /* LaunchScreen.storyboard */ = {
+		1FB16ABBDA51B8F2E9C81FD3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC3A4325287C12A900FAA93B /* Base */,
+				FD77CEE28DBEB3FBD794DFD0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -202,13 +257,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC3A4328287C12A900FAA93B /* Debug */ = {
+		41F74DFC32A3F65B5F4442C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Project/Support/gabozago-iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Project/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wwg.gabozago-iOS";
+				PRODUCT_NAME = gabozago_iOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.6.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B3F7A3CD38AB72802831A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -252,23 +334,45 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		BC3A4329287C12A900FAA93B /* Release */ = {
+		903DC853DD71F2C202A1BE60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Project/Support/gabozago-iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Project/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wwg.gabozago-iOS";
+				PRODUCT_NAME = gabozago_iOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.6.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F9E60D9D62BDB04D63034AAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -306,90 +410,53 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BC3A432B287C12A900FAA93B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "gabozago-iOS/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gabozago.gabozago-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BC3A432C287C12A900FAA93B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "gabozago-iOS/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gabozago.gabozago-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC3A4311287C12A700FAA93B /* Build configuration list for PBXProject "gabozago-iOS" */ = {
+		092F2F64FCF456394CE67CC1 /* Build configuration list for PBXProject "gabozago-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC3A4328287C12A900FAA93B /* Debug */,
-				BC3A4329287C12A900FAA93B /* Release */,
+				5B3F7A3CD38AB72802831A08 /* Debug */,
+				F9E60D9D62BDB04D63034AAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC3A432A287C12A900FAA93B /* Build configuration list for PBXNativeTarget "gabozago-iOS" */ = {
+		64EB0B976961DD3AC36D79BB /* Build configuration list for PBXNativeTarget "gabozago-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC3A432B287C12A900FAA93B /* Debug */,
-				BC3A432C287C12A900FAA93B /* Release */,
+				41F74DFC32A3F65B5F4442C8 /* Debug */,
+				903DC853DD71F2C202A1BE60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55A215857AEC6CA7C54584AD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		B9F58701B5702089ACBDE05C /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
-	rootObject = BC3A430E287C12A700FAA93B /* Project object */;
+	rootObject = 06BF69C0A08D6EFD3DF1E524 /* Project object */;
 }
