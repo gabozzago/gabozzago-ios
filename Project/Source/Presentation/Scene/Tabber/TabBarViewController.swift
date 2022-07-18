@@ -12,5 +12,7 @@ import Then
 
 class TabBarViewController: UITabBarController {
     private let mainVC = MainViewController().then {
+        $0.title = "MainVC"
+        $0.tabBarItem.image = Image.smileImg
     }
 }
