@@ -12,7 +12,7 @@
     {
       "identity" : "then",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/devxoul/Then.git",
+      "location" : "https://github.com/devxoul/Then",
       "state" : {
         "revision" : "e421a7b3440a271834337694e6050133a3958bc7",
         "version" : "2.7.0"

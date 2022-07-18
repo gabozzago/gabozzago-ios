@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		35CA8B31EF822C2CDD5CCBE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CB65408EE4FA6B07BA4550 /* SceneDelegate.swift */; };
+		6E0AC2B902959B8D69CF0F4E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B082D4F8FEF2B8EFB61E6B72 /* SnapKit */; };
+		9149FAFC5C2CA598B8EFC3BE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = FA3E7EB02EB9E544F432B36C /* Then */; };
 		92E495E1C398F05A2683B33D /* TuistBundle+gabozago-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248D8FC7F1F5FE6448D4E0E4 /* TuistBundle+gabozago-iOS.swift */; };
 		96F9D740EA6D3DE6D4C5BFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64E4A1EB9698AE927D28EA4B /* Assets.xcassets */; };
 		AD2E6CCD96ED25AC465FFA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB16ABBDA51B8F2E9C81FD3 /* LaunchScreen.storyboard */; };
@@ -47,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9149FAFC5C2CA598B8EFC3BE /* Then in Frameworks */,
+				6E0AC2B902959B8D69CF0F4E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +186,10 @@
 			dependencies = (
 			);
 			name = "gabozago-iOS";
+			packageProductDependencies = (
+				FA3E7EB02EB9E544F432B36C /* Then */,
+				B082D4F8FEF2B8EFB61E6B72 /* SnapKit */,
+			);
 			productName = gabozago_iOS;
 			productReference = AFDE9D68A7A24F0E9316A08D /* gabozago_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -193,8 +201,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = com.wwg;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 092F2F64FCF456394CE67CC1 /* Build configuration list for PBXProject "gabozago-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -263,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Project/Support/gabozago-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Project/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -270,6 +277,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wwg.gabozago-iOS";
 				PRODUCT_NAME = gabozago_iOS;
 				SDKROOT = iphoneos;
@@ -346,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Project/Support/gabozago-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Project/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -353,6 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wwg.gabozago-iOS";
 				PRODUCT_NAME = gabozago_iOS;
 				SDKROOT = iphoneos;
@@ -457,6 +467,17 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B082D4F8FEF2B8EFB61E6B72 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnapKit;
+		};
+		FA3E7EB02EB9E544F432B36C /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06BF69C0A08D6EFD3DF1E524 /* Project object */;
 }
