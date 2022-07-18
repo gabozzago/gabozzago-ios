@@ -30,7 +30,7 @@ class baseCoordinator: Coordinator {
         }
     }
     
-    func navigate(to step: HMStep){
+    func navigate(to step: GabozagoStep){
         
     }
     
