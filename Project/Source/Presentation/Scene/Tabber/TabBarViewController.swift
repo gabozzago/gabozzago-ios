@@ -11,29 +11,20 @@ import UIKit
 import Then
 
 class TabBarViewController: UITabBarController {
-    private var defaultIndex = 0 {
-        didSet {
-            self.selectedIndex = defaultIndex   
-        }
-    }
     
     private let mainVC = MainViewController().then {
-        $0.title = "MainVC"
         $0.tabBarItem.image = Image.smileImg
     }
     
     private let searchVC = SearchViewController().then {
-        $0.title = "searchVC"
         $0.tabBarItem.image = Image.searchImg
     }
     
     private let likePostVC = LikePostViewController().then {
-        $0.title = "likePostVC"
         $0.tabBarItem.image = Image.likePostImg
     }
     
     private let profileVC = ProfileViewController().then {
-        $0.title = "profileVC"
         $0.tabBarItem.image = Image.profileImg
     }
     
