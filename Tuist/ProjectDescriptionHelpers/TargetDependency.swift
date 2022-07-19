@@ -7,7 +7,7 @@ extension TargetDependency{
 public extension TargetDependency.SPM{
     static let SnapKit = TargetDependency.package(product: "SnapKit")
     static let Then = TargetDependency.package(product: "Then")
-    static let Tabby = TargetDependency.package(product: "Taddy")
+    static let Tabby = TargetDependency.package(product: "Tabby")
 }
 
 public extension Package {
