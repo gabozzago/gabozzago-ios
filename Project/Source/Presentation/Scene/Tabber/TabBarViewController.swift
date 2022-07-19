@@ -11,6 +11,12 @@ import UIKit
 import Then
 
 class TabBarViewController: UITabBarController {
+    private var defaultIndex = 0 {
+        didSet {
+            self.selectedIndex = defaultIndex   
+        }
+    }
+    
     private let mainVC = MainViewController().then {
         $0.title = "MainVC"
         $0.tabBarItem.image = Image.smileImg

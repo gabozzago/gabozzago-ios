@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-class ProfileViewController: ViewController {
+class ProfileViewController: UIViewController {
     
 }

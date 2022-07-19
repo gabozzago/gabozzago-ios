@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-class LikePostViewController: ViewController {
+class LikePostViewController: UIViewController {
     
 }

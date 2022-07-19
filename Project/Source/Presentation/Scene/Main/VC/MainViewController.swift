@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-class MainViewController: ViewController {
+class MainViewController: UIViewController {
     
 }

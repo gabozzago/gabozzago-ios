@@ -12,7 +12,7 @@ final class MainCoordinator: baseCoordinator {
     
     // MARK: - Start
     override func start() {
-        let vc = MainViewController()
+        let vc = TabBarViewController()
         
         self.navigationController.setViewControllers([vc], animated: true)
     }
