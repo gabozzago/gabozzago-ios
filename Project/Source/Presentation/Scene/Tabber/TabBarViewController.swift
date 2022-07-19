@@ -4,7 +4,7 @@ import Then
 class TabBarViewController: UITabBarController {
     
     private let mainVC = MainViewController().then {
-        $0.tabBarItem.image = Image.smileImg
+        $0.tabBarItem.image = Image.mainImg
     }
     
     private let searchVC = SearchViewController().then {
