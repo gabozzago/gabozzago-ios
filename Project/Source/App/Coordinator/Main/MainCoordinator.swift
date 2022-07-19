@@ -12,7 +12,8 @@ final class MainCoordinator: baseCoordinator {
     
     // MARK: - Start
     override func start() {
-        let vc = TabBarViewController()
+        let vm = LoginViewModel(coordinator: self)
+        let vc = LoginViewController(viewModel: vm)
         
         self.navigationController.setViewControllers([vc], animated: true)
     }
@@ -20,15 +21,22 @@ final class MainCoordinator: baseCoordinator {
     // MARK: - Navigate
     override func navigate(to step: GabozagoStep) {
         switch step {
-        case .mainIsRequired:
+        case .loginIsRequired:
             navigateToLogin()
+        case .mainIsRequired:
+            navigateToMain()
         }
     }
 }
 // MARK: - extension
 private extension MainCoordinator {
-    func navigateToLogin() {
+    func navigateToMain() {
         let vc = MainViewController()
+        self.navigationController.setViewControllers([vc], animated: true)
+    }
+    func navigateToLogin() {
+        let vm = LoginViewModel(coordinator: self)
+        let vc = LoginViewController(viewModel: vm)
         self.navigationController.setViewControllers([vc], animated: true)
     }
 }
