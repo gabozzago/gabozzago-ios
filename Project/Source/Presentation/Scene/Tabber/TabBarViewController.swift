@@ -15,4 +15,14 @@ class TabBarViewController: UITabBarController {
         $0.title = "MainVC"
         $0.tabBarItem.image = Image.smileImg
     }
+    
+    private let searchVC = SearchViewController().then {
+        $0.title = "searchVC"
+        $0.tabBarItem.image = Image.searchImg
+    }
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .white
+        setViewControllers([mainVC, searchVC], animated: true)
+    }
 }

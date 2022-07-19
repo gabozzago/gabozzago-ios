@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-class SearchViewController {
+class SearchViewController: UIViewController {
     
 }
