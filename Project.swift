@@ -10,13 +10,13 @@ let project = Project.excutable(
     packages: [
         .Then,
         .SnapKit,
-        .Taddy
+        .Tabby
     ],
     product: .app,
     deploymentTarget: .iOS(targetVersion: "13.5", devices: [.iphone, .ipad]),
     dependencies: [
         .SPM.Then,
         .SPM.SnapKit,
-        .SPM.Taddy
+        .SPM.Tabby
     ]
 )
