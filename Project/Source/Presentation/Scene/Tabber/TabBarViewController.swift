@@ -42,9 +42,9 @@ extension TabBarViewController: UITabBarControllerDelegate {
     func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
         guard let baritemView = item.value(forKey: "view") as? UIView else { return }
         
-        let timeInterval: TimeInterval = 0.2
+        let timeInterval: TimeInterval = 0.5
         let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
-            baritemView.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+            baritemView.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
         }
         propertyAnimator.addAnimations({ baritemView.transform = .identity },
                                        delayFactor: CGFloat(timeInterval))
