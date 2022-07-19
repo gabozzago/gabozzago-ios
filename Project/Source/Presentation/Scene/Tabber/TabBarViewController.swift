@@ -21,6 +21,8 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         view.backgroundColor = .white
+        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
         setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
     }
 }
