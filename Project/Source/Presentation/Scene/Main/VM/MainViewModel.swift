@@ -1,5 +1,5 @@
 //
-//  LikePostViewController.swift
+//  MainViewModel.swift
 //  gabozago-iOS
 //
 //  Created by 민도현 on 2022/07/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class LikePostViewController: ViewController {
+class MainViewModel: baseViewModel {
     
 }

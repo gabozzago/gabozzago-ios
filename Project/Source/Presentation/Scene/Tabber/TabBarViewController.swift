@@ -21,8 +21,18 @@ class TabBarViewController: UITabBarController {
         $0.tabBarItem.image = Image.searchImg
     }
     
+    private let likePostVC = LikePostViewController().then {
+        $0.title = "likePostVC"
+        $0.tabBarItem.image = Image.likePostImg
+    }
+    
+    private let profileVC = ProfileViewController().then {
+        $0.title = "profileVC"
+        $0.tabBarItem.image = Image.profileImg
+    }
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
-        setViewControllers([mainVC, searchVC], animated: true)
+        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
     }
 }

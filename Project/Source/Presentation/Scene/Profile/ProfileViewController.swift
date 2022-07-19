@@ -8,6 +8,6 @@
 
 import Foundation
 
-class ProfileViewController {
+class ProfileViewController: ViewController {
     
 }
