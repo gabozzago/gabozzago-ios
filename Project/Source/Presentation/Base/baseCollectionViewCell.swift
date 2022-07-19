@@ -1,8 +1,8 @@
 import UIKit
 
-class baseTableViewCell<T> : UITableViewCell{
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+class baseCollectionViewCell<T>: UICollectionViewCell{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addView()
         setLayout()
         configureCell()
@@ -20,9 +20,7 @@ class baseTableViewCell<T> : UITableViewCell{
     
     func addView(){}
     func setLayout(){}
-    func configureCell(){
-        selectionStyle = .none
-    }
+    func configureCell(){}
     var model: T? {
         didSet { if let model = model { bind(model) } }
     }
