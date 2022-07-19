@@ -42,3 +42,9 @@ class TabBarViewController: UITabBarController {
         setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
     }
 }
+
+extension TabBarViewController: UITabBarDelegate {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        return
+    }
+}
