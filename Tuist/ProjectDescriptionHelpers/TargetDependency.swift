@@ -20,6 +20,6 @@ public extension Package {
         requirement: .upToNextMajor(from: "3.0.0")
     )
     static let Taddy = Package.remote(
-        url: "https://github.com/hyperoslo/Tabby",
+        url: "https://github.com/hyperoslo/Tabby.git",
         requirement: .upToNextMajor(from: "0.2.0"))
 }
