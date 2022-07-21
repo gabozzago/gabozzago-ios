@@ -3,28 +3,28 @@ import Then
 
 class TabBarViewController: UITabBarController {
     
-    private let mainVC = MainViewController().then {
-        $0.tabBarItem.image = Image.mainImg
-    }
-    
-    private let searchVC = SearchViewController().then {
-        $0.tabBarItem.image = Image.searchImg
-    }
-    
-    private let likePostVC = LikePostViewController().then {
-        $0.tabBarItem.image = Image.likePostImg
-    }
-    
-    private let profileVC = ProfileViewController().then {
-        $0.tabBarItem.image = Image.profileImg
-    }
-    
-    override func viewDidLoad() {
-        view.backgroundColor = .white
-        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
-        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
-    }
+//    private let mainVC = MainViewController().then {
+//        $0.tabBarItem.image = Image.mainImg
+//    }
+//    
+//    private let searchVC = SearchViewController().then {
+//        $0.tabBarItem.image = Image.searchImg
+//    }
+//    
+//    private let likePostVC = LikePostViewController().then {
+//        $0.tabBarItem.image = Image.likePostImg
+//    }
+//    
+//    private let profileVC = ProfileViewController().then {
+//        $0.tabBarItem.image = Image.profileImg
+//    }
+//    
+//    override func viewDidLoad() {
+//        view.backgroundColor = .white
+//        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+//        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+//        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
+//    }
 }
 
 extension TabBarViewController: UITabBarControllerDelegate {

@@ -12,7 +12,8 @@ final class MainCoordinator: baseCoordinator {
     
     // MARK: - Start
     override func start() {
-        let vc = TabBarViewController()
+        let vm = MainViewModel(coordinator: self)
+        let vc = MainViewController(viewModel: vm)
         
         self.navigationController.setViewControllers([vc], animated: true)
     }
@@ -28,7 +29,8 @@ final class MainCoordinator: baseCoordinator {
 // MARK: - extension
 private extension MainCoordinator {
     func navigateToLogin() {
-        let vc = MainViewController()
+        let vm = MainViewModel(coordinator: self)
+        let vc = MainViewController(viewModel: vm)
         self.navigationController.setViewControllers([vc], animated: true)
     }
 }
