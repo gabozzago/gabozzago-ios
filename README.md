@@ -6,5 +6,5 @@
 1. Gitmoji를 이용하여 Commit Message 작성
 
 2. Assets파일 네이밍 규칙
-- Gabozago-ImageName
+- gabozago_ImageName
 ```
