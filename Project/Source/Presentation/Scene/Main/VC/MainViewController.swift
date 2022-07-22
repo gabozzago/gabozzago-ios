@@ -16,9 +16,11 @@ class MainViewController: baseVC<MainViewModel> {
         $0.tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
     }
     
-    private let postTableView = UITableView().then {
+    private let postTableView = UITableView().then() {
         $0.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
         $0.layer.cornerRadius = 13
+        $0.rowHeight = 232
+        $0.separatorStyle = .none
     }
     
     
@@ -27,6 +29,8 @@ class MainViewController: baseVC<MainViewModel> {
     }
     
     override func configureVC() {
+        postTableView.dataSource = self
+        postTableView.delegate = self
         setNavigation()
     }
     
@@ -45,7 +49,7 @@ class MainViewController: baseVC<MainViewModel> {
         postTableView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(27)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(232)
+            $0.bottom.equalToSuperview()
         }
     }
     
@@ -56,17 +60,25 @@ class MainViewController: baseVC<MainViewModel> {
 }
 
 
-extension MainViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()}
+        cell.selectionStyle = .none
+        cell.backgroundColor = .init(red: 0.82, green: 0.86, blue: 1, alpha: 1)
         
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
 }
