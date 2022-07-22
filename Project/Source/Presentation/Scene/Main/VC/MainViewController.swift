@@ -3,6 +3,10 @@ import Then
 import SnapKit
 
 class MainViewController: baseVC<MainViewModel> {
+    private let contentView = UIView()
+    
+    private let contentScrollView = UIScrollView()
+    
     private let maintitleLabel = UILabel().then {
         $0.text = "gabozago"
         $0.font = UIFont(name: "BMJUAOTF", size: 28)
@@ -28,6 +32,29 @@ class MainViewController: baseVC<MainViewModel> {
         
     }
     
+    //뷰가 나타나기 직전
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.postTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+    
+    //화면에 나타난 직후
+    override func viewWillDisappear(_ animated: Bool) {
+        self.postTableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+            if object is UITableView {
+                if let newValue = change?[.newKey] as? CGSize {
+                    postTableView.snp.updateConstraints {
+                        $0.height.equalTo(newValue.height + 50)
+                    }
+                }
+            }
+        }
+    }
+    
     override func configureVC() {
         postTableView.dataSource = self
         postTableView.delegate = self
@@ -35,11 +62,21 @@ class MainViewController: baseVC<MainViewModel> {
     }
     
     override func addView() {
+        view.addSubview(contentScrollView)
+        contentScrollView.addSubview(contentView)
         view.backgroundColor = .init(red: 0.82, green: 0.86, blue: 1, alpha: 1)
-        view.addSubViews(maintitleLabel, postTableView)
+        contentView.addSubViews(maintitleLabel, postTableView)
     }
     
     override func setLayout() {
+        contentScrollView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.centerX.width.top.bottom.equalToSuperview()
+        }
+        
         maintitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(50)
             $0.centerX.equalToSuperview()
@@ -47,8 +84,9 @@ class MainViewController: baseVC<MainViewModel> {
         }
         
         postTableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(27)
+            $0.top.equalToSuperview().inset(26)
             $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(1)
             $0.bottom.equalToSuperview()
         }
     }
@@ -66,7 +104,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
