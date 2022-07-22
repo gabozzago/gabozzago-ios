@@ -6,25 +6,26 @@ class MainTableViewCell: UITableViewCell {
     
     let postImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(systemName: "plus")
-        $0.backgroundColor = .white
+        $0.image = UIImage(systemName: "doc.badge.plus")
+        $0.backgroundColor = .init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     let bottomContentView = UIView().then {
-        $0.backgroundColor = .red
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
     }
     
     let postTitleLabel = UILabel().then {
-        $0.font = UIFont(name: "", size: 14)
+        $0.font = .boldSystemFont(ofSize: 14)
         $0.text = "safda"
     }
     
     let postDescriptionLabel = UILabel().then {
-        $0.font = UIFont(name: "", size: 13)
+        $0.font = .systemFont(ofSize: 13)
+        $0.textColor = .init(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
         $0.text = "description"
     }
     
