@@ -12,6 +12,12 @@ class MainTableViewCell: UITableViewCell {
         $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
+    lazy var heartView = UIButton().then {
+        $0.setImage(UIImage(systemName: "heart"), for: .normal)
+        $0.tintColor = .black
+        $0.addTarget(self, action: #selector(heartViewDidTap(_:)), for: .touchUpInside)
+    }
+    
     let bottomContentView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
@@ -27,6 +33,11 @@ class MainTableViewCell: UITableViewCell {
         $0.font = .systemFont(ofSize: 13)
         $0.textColor = .init(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
         $0.text = "description"
+    }
+    
+    @objc func heartViewDidTap(_ sender: UIButton) {
+        heartView.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        heartView.tintColor = .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -46,7 +57,7 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func addView() {
-        contentView.addSubViews(bottomContentView, postImageView)
+        contentView.addSubViews(bottomContentView, postImageView, heartView)
         bottomContentView.addSubViews(postTitleLabel, postDescriptionLabel)
     }
     
@@ -55,6 +66,14 @@ class MainTableViewCell: UITableViewCell {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
+        
+        heartView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(11)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.size.equalTo(26)
+        }
+        
+        
         bottomContentView.snp.makeConstraints {
             $0.top.equalTo(postImageView.snp.bottom).inset(3)
             $0.leading.trailing.equalToSuperview()
