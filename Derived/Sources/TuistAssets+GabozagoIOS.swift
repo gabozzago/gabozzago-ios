@@ -17,8 +17,14 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum GabozagoIOSAsset {
-  public static let accentColor = GabozagoIOSColors(name: "AccentColor")
-  public static let tabBarSmile = GabozagoIOSImages(name: "tabBar-smile")
+  public enum Colors {
+    public static let gabozagoBackGroundColor = GabozagoIOSColors(name: "gabozago_BackGroundColor")
+    public static let gabozagoMainColor = GabozagoIOSColors(name: "gabozago_MainColor")
+  }
+  public enum Images {
+    public static let accentColor = GabozagoIOSColors(name: "AccentColor")
+    public static let tabBarSmile = GabozagoIOSImages(name: "tabBar-smile")
+  }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
