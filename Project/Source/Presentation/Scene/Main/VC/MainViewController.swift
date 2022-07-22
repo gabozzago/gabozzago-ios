@@ -1,6 +1,7 @@
 import UIKit
 import Then
 import SnapKit
+import SwiftUI
 
 class MainViewController: baseVC<MainViewModel> {
     private let contentView = UIView()
@@ -10,14 +11,14 @@ class MainViewController: baseVC<MainViewModel> {
     private let maintitleLabel = UILabel().then {
         $0.text = "gabozago"
         $0.font = UIFont(name: "BMJUAOTF", size: 28)
-        $0.textColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        $0.textColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
     }
     
     private lazy var plusBtn = UIBarButtonItem(image: UIImage(systemName: "plus"),
                                                style: .plain,
                                                target: self,
                                                action: #selector(plusBtnDidTap(_:))).then {
-        $0.tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        $0.tintColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
     }
     
     private let postTableView = UITableView().then() {
@@ -64,7 +65,7 @@ class MainViewController: baseVC<MainViewModel> {
     override func addView() {
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(contentView)
-        view.backgroundColor = .init(red: 0.82, green: 0.86, blue: 1, alpha: 1)
+        view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         contentView.addSubViews(maintitleLabel, postTableView)
     }
     
@@ -91,7 +92,7 @@ class MainViewController: baseVC<MainViewModel> {
         }
     }
     
-    func setNavigation() {
+    private func setNavigation() {
         self.navigationItem.titleView = maintitleLabel
         self.navigationItem.rightBarButtonItem = plusBtn
     }
@@ -111,7 +112,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()}
         cell.selectionStyle = .none
-        cell.backgroundColor = .init(red: 0.82, green: 0.86, blue: 1, alpha: 1)
+        cell.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         
         return cell
     }
