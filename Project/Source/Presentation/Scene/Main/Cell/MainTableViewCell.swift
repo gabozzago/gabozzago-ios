@@ -2,7 +2,13 @@ import UIKit
 import Then
 import SnapKit
 
-class MainTableViewCell: UITableViewCell {
+protocol hearBtnTableVeiwCellDelegate {
+    func heartBtnDidTap(id: String) -> Bool
+}
+
+class MainTableViewCell: baseTableViewCell<MainModel> {
+    
+    var delegate: hearBtnTableVeiwCellDelegate?
     
     let postImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -12,7 +18,7 @@ class MainTableViewCell: UITableViewCell {
         $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
-    lazy var heartView = UIButton().then {
+    lazy var heartBtn = UIButton().then {
         $0.setImage(UIImage(systemName: "heart"), for: .normal)
         $0.tintColor = .black
         $0.addTarget(self, action: #selector(heartViewDidTap(_:)), for: .touchUpInside)
@@ -36,15 +42,15 @@ class MainTableViewCell: UITableViewCell {
     }
     
     @objc func heartViewDidTap(_ sender: UIButton) {
-        heartView.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        heartView.tintColor = .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1)
+        var visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
+        
+        heartBtn.setImage(UIImage(systemName: visible ? "heart.fill" : "heart"), for: .normal)
+        heartBtn.tintColor = visible ? .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1) : .black
+        
+        
     }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        addView()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -54,20 +60,21 @@ class MainTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+        self.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
     }
     
-    func addView() {
-        contentView.addSubViews(bottomContentView, postImageView, heartView)
+    override func addView() {
+        contentView.addSubViews(bottomContentView, postImageView, heartBtn)
         bottomContentView.addSubViews(postTitleLabel, postDescriptionLabel)
     }
     
-    func setLayout() {
+    override func setLayout() {
         postImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         
-        heartView.snp.makeConstraints {
+        heartBtn.snp.makeConstraints {
             $0.top.equalToSuperview().inset(11)
             $0.trailing.equalToSuperview().inset(8)
             $0.size.equalTo(26)

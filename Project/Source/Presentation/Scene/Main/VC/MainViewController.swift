@@ -4,6 +4,7 @@ import SnapKit
 import SwiftUI
 
 class MainViewController: baseVC<MainViewModel> {
+    
     private let contentView = UIView()
     
     private let contentScrollView = UIScrollView()
@@ -31,6 +32,11 @@ class MainViewController: baseVC<MainViewModel> {
     
     @objc private func plusBtnDidTap(_ sender: UIBarButtonItem) {
         
+    }
+    
+    private func setNavigation() {
+        self.navigationItem.titleView = maintitleLabel
+        self.navigationItem.rightBarButtonItem = plusBtn
     }
     
     //뷰가 나타나기 직전
@@ -91,19 +97,20 @@ class MainViewController: baseVC<MainViewModel> {
             $0.bottom.equalToSuperview()
         }
     }
-    
-    private func setNavigation() {
-        self.navigationItem.titleView = maintitleLabel
-        self.navigationItem.rightBarButtonItem = plusBtn
-    }
 }
 
+extension MainViewController: hearBtnTableVeiwCellDelegate {
+    func heartBtnDidTap(id: String) -> Bool {
+        viewModel.heartViewIsVisibleDidTap()
+        return viewModel.heartViewIsVisible.value
+    }
+}
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 10
     }
@@ -111,8 +118,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()}
-        cell.selectionStyle = .none
-        cell.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        cell.delegate = self
         
         return cell
     }
