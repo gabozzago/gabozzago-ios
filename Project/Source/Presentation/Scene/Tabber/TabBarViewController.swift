@@ -31,30 +31,16 @@ class TabBarViewController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    private let mainVC = MainViewController().then {
-//        $0.tabBarItem.image = Image.mainImg
-//    }
-    
-//    private let searchVC = SearchViewController().then {
-//        $0.tabBarItem.image = Image.searchImg
-//    }
-//
-//    private let likePostVC = LikePostViewController().then {
-//        $0.tabBarItem.image = Image.likePostImg
-//    }
-//
-//    private let profileVC = ProfileViewController().then {
-//        $0.tabBarItem.image = Image.profileImg
-//    }
+    func setStart() {
+        coordinaotr = MainCoordinator(navigationController: mainVC)
+        coordinaotr.navigate(to: .mainIsRequired)
+    }
     
     override func viewDidLoad() {
+        setStart()
         view.backgroundColor = .white
         UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
         UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-//        setViewControllers([mainVC], animated: true)
-//        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
-        coordinaotr = MainCoordinator(navigationController: mainVC)
-        coordinaotr.navigate(to: .mainIsRequired)
         viewControllers = [mainVC, searchVC, likePostVC, profileVC]
     }
 }
@@ -65,8 +51,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
         
         switch item.tag {
         case 0:
-            coordinaotr = MainCoordinator(navigationController: mainVC)
-            coordinaotr.navigate(to: .mainIsRequired)
+            setStart()
         case 1:
             coordinaotr = MainCoordinator(navigationController: searchVC)
             coordinaotr.navigate(to: .searchIsRequired)
