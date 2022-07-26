@@ -8,13 +8,7 @@ class MainViewModel: baseViewModel {
         heartViewIsVisible.value.toggle()
     }
     
+    func setMainVC() {
+        coordinator.navigate(to: .mainIsRequired)
+    }
 }
-
-
-//extension MainViewModel: hearBtnTableVeiwCellDelegate {
-//    func heartBtnDidTap(id: String) {
-//        <#code#>
-//    }
-//
-    
-//}

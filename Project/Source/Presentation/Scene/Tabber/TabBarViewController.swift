@@ -3,33 +3,83 @@ import Then
 
 class TabBarViewController: UITabBarController {
     
+    var coordinaotr: Coordinator
+    
+    private let mainVC = UINavigationController().then {
+        $0.tabBarItem.image = Image.mainImg
+        $0.tabBarItem.tag = 0
+    }
+    private let searchVC = UINavigationController().then {
+        $0.tabBarItem.image = Image.searchImg
+        $0.tabBarItem.tag = 1
+    }
+    private let likePostVC = UINavigationController().then {
+        $0.tabBarItem.image = Image.likePostImg
+        $0.tabBarItem.tag = 2
+    }
+    private let profileVC = UINavigationController().then {
+        $0.tabBarItem.image = Image.profileImg
+        $0.tabBarItem.tag = 3
+    }
+
+    init(coordinator: Coordinator) {
+        self.coordinaotr = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 //    private let mainVC = MainViewController().then {
 //        $0.tabBarItem.image = Image.mainImg
 //    }
-//    
+    
 //    private let searchVC = SearchViewController().then {
 //        $0.tabBarItem.image = Image.searchImg
 //    }
-//    
+//
 //    private let likePostVC = LikePostViewController().then {
 //        $0.tabBarItem.image = Image.likePostImg
 //    }
-//    
+//
 //    private let profileVC = ProfileViewController().then {
 //        $0.tabBarItem.image = Image.profileImg
 //    }
-//    
-//    override func viewDidLoad() {
-//        view.backgroundColor = .white
-//        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
-//        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .white
+        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+//        setViewControllers([mainVC], animated: true)
 //        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
-//    }
+        coordinaotr = MainCoordinator(navigationController: mainVC)
+        coordinaotr.navigate(to: .mainIsRequired)
+        viewControllers = [mainVC, searchVC, likePostVC, profileVC]
+    }
 }
-
 extension TabBarViewController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.simpleAnimationWhenSelectedItem(item)
+        print(item.tag)
+        
+        switch item.tag {
+        case 0:
+            coordinaotr = MainCoordinator(navigationController: mainVC)
+            coordinaotr.navigate(to: .mainIsRequired)
+        case 1:
+            coordinaotr = MainCoordinator(navigationController: searchVC)
+            coordinaotr.navigate(to: .searchIsRequired)
+        case 2:
+            coordinaotr = MainCoordinator(navigationController: likePostVC)
+            coordinaotr.navigate(to: .likePostIsRequired)
+        case 3:
+            coordinaotr = MainCoordinator(navigationController: profileVC)
+            coordinaotr.navigate(to: .profileIsRequired)
+        default:
+            coordinaotr = MainCoordinator(navigationController: mainVC)
+            coordinaotr.navigate(to: .mainIsRequired)
+        }
     }
     
     func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
