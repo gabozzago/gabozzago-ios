@@ -21,12 +21,12 @@ class TabBarViewController: UITabBarController {
         $0.tabBarItem.image = Image.profileImg
         $0.tabBarItem.tag = 3
     }
-
+    
     init(coordinator: Coordinator) {
         self.coordinaotr = coordinator
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,18 +36,27 @@ class TabBarViewController: UITabBarController {
         coordinaotr.navigate(to: .mainIsRequired)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var tabFrame = self.tabBar.frame
+        tabFrame.size.height = 95
+        tabFrame.origin.y = self.view.frame.size.height - 90
+        self.tabBar.frame = tabFrame
+    }
+    
+    
     override func viewDidLoad() {
         setStart()
-        view.backgroundColor = .white
         UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
         UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        viewControllers = [mainVC, searchVC, likePostVC, profileVC]
+        UITabBar.appearance().frame.size.height = 10
+        setViewControllers([mainVC, searchVC, likePostVC, profileVC], animated: true)
     }
 }
+
 extension TabBarViewController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.simpleAnimationWhenSelectedItem(item)
-        print(item.tag)
         
         switch item.tag {
         case 0:
@@ -62,8 +71,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
             coordinaotr = MainCoordinator(navigationController: profileVC)
             coordinaotr.navigate(to: .profileIsRequired)
         default:
-            coordinaotr = MainCoordinator(navigationController: mainVC)
-            coordinaotr.navigate(to: .mainIsRequired)
+            setStart()
         }
     }
     

@@ -34,11 +34,6 @@ class MainViewController: baseVC<MainViewModel> {
         
     }
     
-    private func setNavigation() {
-        self.navigationItem.titleView = maintitleLabel
-        self.navigationItem.rightBarButtonItem = plusBtn
-    }
-    
     //뷰가 나타나기 직전
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,9 +58,11 @@ class MainViewController: baseVC<MainViewModel> {
     }
     
     override func configureVC() {
-        postTableView.dataSource = self
         postTableView.delegate = self
-        setNavigation()
+        postTableView.dataSource = self
+
+        self.navigationItem.titleView = maintitleLabel
+        self.navigationItem.rightBarButtonItem = plusBtn
     }
     
     override func addView() {
