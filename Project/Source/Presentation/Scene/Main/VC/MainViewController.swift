@@ -3,7 +3,7 @@ import Then
 import SnapKit
 import SwiftUI
 
-class MainViewController: baseVC<MainViewModel> {
+final class MainViewController: baseVC<MainViewModel> {
     
     private let contentView = UIView()
     
@@ -28,7 +28,6 @@ class MainViewController: baseVC<MainViewModel> {
         $0.rowHeight = 232
         $0.separatorStyle = .none
     }
-    
     
     @objc private func plusBtnDidTap(_ sender: UIBarButtonItem) {
         

@@ -6,7 +6,7 @@ protocol hearBtnTableVeiwCellDelegate {
     func heartBtnDidTap(id: String) -> Bool
 }
 
-class MainTableViewCell: baseTableViewCell<MainModel> {
+final class MainTableViewCell: baseTableViewCell<MainModel> {
     
     var delegate: hearBtnTableVeiwCellDelegate?
     
@@ -42,7 +42,7 @@ class MainTableViewCell: baseTableViewCell<MainModel> {
     }
     
     @objc func heartViewDidTap(_ sender: UIButton) {
-        var visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
+        let visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
         
         heartBtn.setImage(UIImage(systemName: visible ? "heart.fill" : "heart"), for: .normal)
         heartBtn.tintColor = visible ? .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1) : .black

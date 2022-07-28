@@ -1,9 +1,9 @@
 import UIKit
 import Then
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
     
-    var coordinaotr: Coordinator
+    private var coordinaotr: Coordinator
     
     private let mainVC = UINavigationController().then {
         $0.tabBarItem.image = Image.mainImg
@@ -31,7 +31,7 @@ class TabBarViewController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setStart() {
+    private func setStart() {
         coordinaotr = MainCoordinator(navigationController: mainVC)
         coordinaotr.navigate(to: .mainIsRequired)
     }
@@ -75,8 +75,6 @@ extension TabBarViewController: UITabBarControllerDelegate {
             
             return
         }
-        
-        return
     }
     
     func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
