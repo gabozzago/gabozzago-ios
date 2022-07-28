@@ -38,12 +38,9 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = 95
-        tabFrame.origin.y = self.view.frame.size.height - 90
-        self.tabBar.frame = tabFrame
+        self.tabBar.frame.size.height = 95
+        self.tabBar.frame.origin.y = self.view.frame.size.height - 90
     }
-    
     
     override func viewDidLoad() {
         setStart()
@@ -58,21 +55,28 @@ extension TabBarViewController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.simpleAnimationWhenSelectedItem(item)
         
-        switch item.tag {
-        case 0:
-            setStart()
-        case 1:
-            coordinaotr = MainCoordinator(navigationController: searchVC)
-            coordinaotr.navigate(to: .searchIsRequired)
-        case 2:
-            coordinaotr = MainCoordinator(navigationController: likePostVC)
-            coordinaotr.navigate(to: .likePostIsRequired)
-        case 3:
-            coordinaotr = MainCoordinator(navigationController: profileVC)
-            coordinaotr.navigate(to: .profileIsRequired)
-        default:
-            setStart()
+        guard item.tag == selectedIndex else {
+            
+            switch item.tag {
+            case 0:
+                setStart()
+            case 1:
+                coordinaotr = MainCoordinator(navigationController: searchVC)
+                coordinaotr.navigate(to: .searchIsRequired)
+            case 2:
+                coordinaotr = MainCoordinator(navigationController: likePostVC)
+                coordinaotr.navigate(to: .likePostIsRequired)
+            case 3:
+                coordinaotr = MainCoordinator(navigationController: profileVC)
+                coordinaotr.navigate(to: .profileIsRequired)
+            default:
+                setStart()
+            }
+            
+            return
         }
+        
+        return
     }
     
     func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
