@@ -1,7 +1,6 @@
 import UIKit
 import Then
 import SnapKit
-import SwiftUI
 
 final class MainViewController: baseVC<MainViewModel> {
     
@@ -11,7 +10,7 @@ final class MainViewController: baseVC<MainViewModel> {
     
     private let maintitleLabel = UILabel().then {
         $0.text = "gabozago"
-        $0.font = UIFont(name: "BMJUAOTF", size: 28)
+        $0.font = UIFont(name: GabozagoIOSFontFamily.BmJuaOtf.regular.name, size: 28)
         $0.textColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
     }
     

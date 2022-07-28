@@ -10,7 +10,7 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
     
     var delegate: hearBtnTableVeiwCellDelegate?
     
-    let postImageView = UIImageView().then {
+    private let postImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(systemName: "doc.badge.plus")
         $0.backgroundColor = .init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
@@ -24,30 +24,28 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
         $0.addTarget(self, action: #selector(heartViewDidTap(_:)), for: .touchUpInside)
     }
     
-    let bottomContentView = UIView().then {
+    private let bottomContentView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
     }
     
-    let postTitleLabel = UILabel().then {
+    private let postTitleLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 14)
         $0.text = "safda"
     }
     
-    let postDescriptionLabel = UILabel().then {
+    private let postDescriptionLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 13)
         $0.textColor = .init(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
         $0.text = "description"
     }
     
-    @objc func heartViewDidTap(_ sender: UIButton) {
+    @objc private func heartViewDidTap(_ sender: UIButton) {
         let visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
         
         heartBtn.setImage(UIImage(systemName: visible ? "heart.fill" : "heart"), for: .normal)
         heartBtn.tintColor = visible ? .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1) : .black
-        
-        
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -3,7 +3,7 @@ import Then
 
 final class TabBarViewController: UITabBarController {
     
-    private var coordinaotr: Coordinator
+    private var coordinator: Coordinator
     
     private let mainVC = UINavigationController().then {
         $0.tabBarItem.image = Image.mainImg
@@ -23,7 +23,7 @@ final class TabBarViewController: UITabBarController {
     }
     
     init(coordinator: Coordinator) {
-        self.coordinaotr = coordinator
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,8 +32,8 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func setStart() {
-        coordinaotr = MainCoordinator(navigationController: mainVC)
-        coordinaotr.navigate(to: .mainIsRequired)
+        coordinator = MainCoordinator(navigationController: mainVC)
+        coordinator.navigate(to: .mainIsRequired)
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,14 +61,14 @@ extension TabBarViewController: UITabBarControllerDelegate {
             case 0:
                 setStart()
             case 1:
-                coordinaotr = MainCoordinator(navigationController: searchVC)
-                coordinaotr.navigate(to: .searchIsRequired)
+                coordinator = MainCoordinator(navigationController: searchVC)
+                coordinator.navigate(to: .searchIsRequired)
             case 2:
-                coordinaotr = MainCoordinator(navigationController: likePostVC)
-                coordinaotr.navigate(to: .likePostIsRequired)
+                coordinator = MainCoordinator(navigationController: likePostVC)
+                coordinator.navigate(to: .likePostIsRequired)
             case 3:
-                coordinaotr = MainCoordinator(navigationController: profileVC)
-                coordinaotr.navigate(to: .profileIsRequired)
+                coordinator = MainCoordinator(navigationController: profileVC)
+                coordinator.navigate(to: .profileIsRequired)
             default:
                 setStart()
             }
