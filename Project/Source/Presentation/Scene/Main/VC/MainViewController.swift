@@ -58,15 +58,15 @@ final class MainViewController: baseVC<MainViewModel> {
     override func configureVC() {
         postTableView.delegate = self
         postTableView.dataSource = self
-
+        
         self.navigationItem.titleView = maintitleLabel
         self.navigationItem.rightBarButtonItem = plusBtn
     }
     
     override func addView() {
+        view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         view.addSubview(contentScrollView)
         contentScrollView.addSubview(contentView)
-        view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         contentView.addSubViews(maintitleLabel, postTableView)
     }
     
