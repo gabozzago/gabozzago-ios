@@ -11,4 +11,8 @@ class MainViewModel: baseViewModel {
     func setMainVC() {
         coordinator.navigate(to: .mainIsRequired)
     }
+    
+    func pushCreatePostVC() {
+        coordinator.navigate(to: .createPostIsRequired)
+    }
 }

@@ -29,7 +29,7 @@ final class MainViewController: baseVC<MainViewModel> {
     }
     
     @objc private func plusBtnDidTap(_ sender: UIBarButtonItem) {
-        
+        viewModel.pushCreatePostVC()
     }
     
     //뷰가 나타나기 직전

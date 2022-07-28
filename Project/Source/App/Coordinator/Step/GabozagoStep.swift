@@ -4,4 +4,7 @@ enum GabozagoStep {
     case searchIsRequired
     case likePostIsRequired
     case profileIsRequired
+    
+    // Post
+    case createPostIsRequired
 }

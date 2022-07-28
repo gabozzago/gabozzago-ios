@@ -20,6 +20,8 @@ final class MainCoordinator: baseCoordinator {
             likePostIsRequired()
         case .profileIsRequired:
             profileIsRequired()
+        case .createPostIsRequired:
+            createPostIsRequired()
         }
     }
 }
@@ -47,5 +49,11 @@ private extension MainCoordinator {
         let vm = ProfileViewModel(coordinator: self)
         let vc = ProfileViewController(viewModel: vm)
         self.navigationController.setViewControllers([vc], animated: true)
+    }
+    
+    func createPostIsRequired() {
+        let vm = CreatePostViewModel(coordinator: self)
+        let vc = CreatePostVC(viewModel: vm)
+        self.navigationController.pushViewController(vc, animated: true)
     }
 }
