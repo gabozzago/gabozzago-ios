@@ -2,12 +2,19 @@ import UIKit
 import GoogleSignIn
 import SnapKit
 
+//CGRect(x: 250, y: 244, width: 20, height: 20)
+
 final class LoginViewController: baseVC<LoginViewModel>{
+    
+    private let cloudLeftView = CloudView().then{
+        $0.frame = CGRect(x: 27, y: 74, width: 112, height: 64)
+    }
+    private let cloudRightView = CloudView()
     
     private let titleLabel = UILabel().then{
         $0.text = "Hello!"
-        $0.font = .systemFont(ofSize: 32)
-        $0.textColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        $0.font = UIFont(font: GabozagoIOSFontFamily.BmJuaOtf.regular, size: 32)
+        $0.textColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
     }
     
     private let subLabel = UILabel().then{
@@ -39,8 +46,9 @@ final class LoginViewController: baseVC<LoginViewModel>{
     }
     
     
+    
     override func configureVC() {
-        view.backgroundColor = .white
+        view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
     }
     
     override func setup() {
@@ -60,15 +68,17 @@ final class LoginViewController: baseVC<LoginViewModel>{
         }
         subLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(13)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(22)
         }
-        
+        cloudRightView.snp.makeConstraints{
+            $0.top.equalTo(cloudLeftView.snp.bottom)
+            $0.height.equalTo(2)
+        }
+       
     }
     
     override func addView() {
-        view.addSubview(googleSigiInButton)
-        view.addSubview(titleLabel)
-        view.addSubview(subLabel)
+        view.addSubViews(googleSigiInButton,titleLabel,titleLabel,subLabel,cloudLeftView,cloudRightView)
     }
     
 }

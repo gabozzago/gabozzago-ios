@@ -23,6 +23,7 @@ public enum GabozagoIOSAsset {
   }
   public enum Images {
     public static let accentColor = GabozagoIOSColors(name: "AccentColor")
+    public static let googleLogo = GabozagoIOSImages(name: "Google_Logo")
     public static let tabBarSmile = GabozagoIOSImages(name: "tabBar-smile")
   }
 }
