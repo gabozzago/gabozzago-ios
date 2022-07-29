@@ -11,6 +11,8 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
     // MARK: - Properties
     weak var delegate: hearBtnTableVeiwCellDelegate?
     
+    static let reuseIdentifier = "MainTableViewCell"
+    
     private let postImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(systemName: "doc.badge.plus")

@@ -23,7 +23,7 @@ final class MainViewController: baseVC<MainViewModel> {
     }
     
     private let postTableView = UITableView().then() {
-        $0.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+        $0.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         $0.layer.cornerRadius = 13
         $0.rowHeight = 232
         $0.separatorStyle = .none
@@ -46,7 +46,6 @@ final class MainViewController: baseVC<MainViewModel> {
     
     override func addView() {
         view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
-        self.navigationController?.navigationBar.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         view.addSubViews(maintitleLabel, postTableView)
     }
     
@@ -82,7 +81,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()}
         cell.delegate = self
         
