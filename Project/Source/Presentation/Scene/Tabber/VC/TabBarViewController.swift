@@ -75,7 +75,6 @@ extension TabBarViewController: UITabBarControllerDelegate {
             default:
                 setStart()
             }
-            
             return
         }
     }
