@@ -1,6 +1,7 @@
 import UIKit
 
 class baseCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
     var parentCoordinator: Coordinator?
@@ -31,6 +32,10 @@ class baseCoordinator: Coordinator {
     }
     
     func navigate(to step: GabozagoStep){
+        
+    }
+    
+    func navigate(to step: TabBarStep) {
         
     }
     

@@ -34,7 +34,7 @@ final class TabBarViewController: UITabBarController {
     
     // MARK: - Method
     private func setStart() {
-        coordinator = MainCoordinator(navigationController: mainVC)
+        coordinator = TabBarCoordinator(navigationController: mainVC)
         coordinator.navigate(to: .mainIsRequired)
     }
     
@@ -64,13 +64,13 @@ extension TabBarViewController: UITabBarControllerDelegate {
             case 0:
                 setStart()
             case 1:
-                coordinator = MainCoordinator(navigationController: searchVC)
+                coordinator = TabBarCoordinator(navigationController: searchVC)
                 coordinator.navigate(to: .searchIsRequired)
             case 2:
-                coordinator = MainCoordinator(navigationController: likePostVC)
+                coordinator = TabBarCoordinator(navigationController: likePostVC)
                 coordinator.navigate(to: .likePostIsRequired)
             case 3:
-                coordinator = MainCoordinator(navigationController: profileVC)
+                coordinator = TabBarCoordinator(navigationController: profileVC)
                 coordinator.navigate(to: .profileIsRequired)
             default:
                 setStart()

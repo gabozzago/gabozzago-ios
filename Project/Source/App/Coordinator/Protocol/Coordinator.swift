@@ -8,5 +8,6 @@ protocol Coordinator: AnyObject {
     func start(coordinator: Coordinator)
     func didFinish(coordinator: Coordinator)
     func navigate(to step: GabozagoStep)
+    func navigate(to step: TabBarStep)
     func removeChildCoordinators()
 }
