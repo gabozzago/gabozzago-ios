@@ -46,9 +46,6 @@ final class MainViewController: baseVC<MainViewModel> {
     override func addView() {
         view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
         self.navigationController?.navigationBar.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
-//        view.addSubview(contentScrollView)
-//        contentScrollView.addSubview(contentView)
-//        contentView.addSubViews(maintitleLabel, postTableView)
         view.addSubViews(maintitleLabel, postTableView)
     }
     
