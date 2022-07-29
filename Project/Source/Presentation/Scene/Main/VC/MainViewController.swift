@@ -34,28 +34,6 @@ final class MainViewController: baseVC<MainViewModel> {
         viewModel.pushCreatePostVC()
     }
     
-//    //뷰가 나타나기 직전
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.postTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-//    }
-//
-//    //화면에 나타난 직후
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.postTableView.removeObserver(self, forKeyPath: "contentSize")
-//    }
-//
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        if keyPath == "contentSize" {
-//            if object is UITableView {
-//                if let newValue = change?[.newKey] as? CGSize {
-//                    postTableView.snp.updateConstraints {
-//                        $0.height.equalTo(newValue.height + 50)
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     override func configureVC() {
         postTableView.delegate = self
