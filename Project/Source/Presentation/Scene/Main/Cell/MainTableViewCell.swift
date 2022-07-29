@@ -2,14 +2,14 @@ import UIKit
 import Then
 import SnapKit
 
-protocol hearBtnTableVeiwCellDelegate {
+protocol hearBtnTableVeiwCellDelegate: AnyObject {
     func heartBtnDidTap(id: String) -> Bool
 }
 
 final class MainTableViewCell: baseTableViewCell<MainModel> {
     
     // MARK: - Properties
-    var delegate: hearBtnTableVeiwCellDelegate?
+    weak var delegate: hearBtnTableVeiwCellDelegate?
     
     private let postImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
