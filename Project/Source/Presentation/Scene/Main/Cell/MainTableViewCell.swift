@@ -15,10 +15,10 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
         $0.image = UIImage(systemName: "doc.badge.plus")
         $0.backgroundColor = .init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
         $0.layer.cornerRadius = 12
-        $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-    lazy var heartBtn = UIButton().then {
+    private lazy var heartBtn = UIButton().then {
         $0.setImage(UIImage(systemName: "heart"), for: .normal)
         $0.tintColor = .black
         $0.addTarget(self, action: #selector(heartViewDidTap(_:)), for: .touchUpInside)
@@ -27,7 +27,7 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
     private let bottomContentView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
-        $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
+        $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
     private let postTitleLabel = UILabel().then {
@@ -77,7 +77,6 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
             $0.trailing.equalToSuperview().inset(8)
             $0.size.equalTo(26)
         }
-        
         
         bottomContentView.snp.makeConstraints {
             $0.top.equalTo(postImageView.snp.bottom).inset(3)

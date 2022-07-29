@@ -26,34 +26,36 @@ final class MainViewController: baseVC<MainViewModel> {
         $0.layer.cornerRadius = 13
         $0.rowHeight = 232
         $0.separatorStyle = .none
+        $0.showsVerticalScrollIndicator = false
+        $0.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
     }
     
     @objc private func plusBtnDidTap(_ sender: UIBarButtonItem) {
         viewModel.pushCreatePostVC()
     }
     
-    //뷰가 나타나기 직전
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.postTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-    }
-    
-    //화면에 나타난 직후
-    override func viewWillDisappear(_ animated: Bool) {
-        self.postTableView.removeObserver(self, forKeyPath: "contentSize")
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentSize" {
-            if object is UITableView {
-                if let newValue = change?[.newKey] as? CGSize {
-                    postTableView.snp.updateConstraints {
-                        $0.height.equalTo(newValue.height + 50)
-                    }
-                }
-            }
-        }
-    }
+//    //뷰가 나타나기 직전
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.postTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+//    }
+//
+//    //화면에 나타난 직후
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.postTableView.removeObserver(self, forKeyPath: "contentSize")
+//    }
+//
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        if keyPath == "contentSize" {
+//            if object is UITableView {
+//                if let newValue = change?[.newKey] as? CGSize {
+//                    postTableView.snp.updateConstraints {
+//                        $0.height.equalTo(newValue.height + 50)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     override func configureVC() {
         postTableView.delegate = self
@@ -65,22 +67,16 @@ final class MainViewController: baseVC<MainViewModel> {
     
     override func addView() {
         view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
-        view.addSubview(contentScrollView)
-        contentScrollView.addSubview(contentView)
-        contentView.addSubViews(maintitleLabel, postTableView)
+        self.navigationController?.navigationBar.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+//        view.addSubview(contentScrollView)
+//        contentScrollView.addSubview(contentView)
+//        contentView.addSubViews(maintitleLabel, postTableView)
+        view.addSubViews(maintitleLabel, postTableView)
     }
     
     override func setLayout() {
-        contentScrollView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        contentView.snp.makeConstraints {
-            $0.centerX.width.top.bottom.equalToSuperview()
-        }
-        
         maintitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
