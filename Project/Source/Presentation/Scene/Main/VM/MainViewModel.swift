@@ -1,6 +1,6 @@
 import Foundation
 
-class MainViewModel: baseViewModel {
+final class MainViewModel: baseViewModel {
     
     var heartViewIsVisible = Observable(false)
     

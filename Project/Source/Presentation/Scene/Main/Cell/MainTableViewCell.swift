@@ -8,6 +8,7 @@ protocol hearBtnTableVeiwCellDelegate {
 
 final class MainTableViewCell: baseTableViewCell<MainModel> {
     
+    // MARK: - Properties
     var delegate: hearBtnTableVeiwCellDelegate?
     
     private let postImageView = UIImageView().then {
@@ -41,18 +42,20 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
         $0.text = "description"
     }
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Method
     @objc private func heartViewDidTap(_ sender: UIButton) {
         let visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
         
         heartBtn.setImage(UIImage(systemName: visible ? "heart.fill" : "heart"), for: .normal)
         heartBtn.tintColor = visible ? .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1) : .black
-    }
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews() {

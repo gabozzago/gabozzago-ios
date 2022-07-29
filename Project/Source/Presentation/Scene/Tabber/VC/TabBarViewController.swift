@@ -3,6 +3,7 @@ import Then
 
 final class TabBarViewController: UITabBarController {
     
+    // MARK: - Properties
     private var coordinator: Coordinator
     
     private let mainVC = UINavigationController().then {
@@ -31,6 +32,7 @@ final class TabBarViewController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Method
     private func setStart() {
         coordinator = MainCoordinator(navigationController: mainVC)
         coordinator.navigate(to: .mainIsRequired)
@@ -51,6 +53,7 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
+// MARK: - Extension
 extension TabBarViewController: UITabBarControllerDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.simpleAnimationWhenSelectedItem(item)
@@ -77,7 +80,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
         }
     }
     
-    func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
+    private func simpleAnimationWhenSelectedItem(_ item: UIBarItem) {
         guard let baritemView = item.value(forKey: "view") as? UIView else { return }
         
         let timeInterval: TimeInterval = 0.5

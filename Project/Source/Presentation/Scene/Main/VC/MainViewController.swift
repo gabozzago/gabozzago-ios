@@ -4,6 +4,7 @@ import SnapKit
 
 final class MainViewController: baseVC<MainViewModel> {
     
+    // MARK: - Properties
     private let contentView = UIView()
     
     private let contentScrollView = UIScrollView()
@@ -30,32 +31,10 @@ final class MainViewController: baseVC<MainViewModel> {
         $0.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
     }
     
+    // MARK: - Method
     @objc private func plusBtnDidTap(_ sender: UIBarButtonItem) {
         viewModel.pushCreatePostVC()
     }
-    
-//    //뷰가 나타나기 직전
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.postTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-//    }
-//
-//    //화면에 나타난 직후
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.postTableView.removeObserver(self, forKeyPath: "contentSize")
-//    }
-//
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        if keyPath == "contentSize" {
-//            if object is UITableView {
-//                if let newValue = change?[.newKey] as? CGSize {
-//                    postTableView.snp.updateConstraints {
-//                        $0.height.equalTo(newValue.height + 50)
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     override func configureVC() {
         postTableView.delegate = self
@@ -67,22 +46,16 @@ final class MainViewController: baseVC<MainViewModel> {
     
     override func addView() {
         view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
-        self.navigationController?.navigationBar.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
-//        view.addSubview(contentScrollView)
-//        contentScrollView.addSubview(contentView)
-//        contentView.addSubViews(maintitleLabel, postTableView)
         view.addSubViews(maintitleLabel, postTableView)
     }
     
     override func setLayout() {
         maintitleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
         
         postTableView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(26)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(26)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(1)
             $0.bottom.equalToSuperview()
@@ -90,6 +63,7 @@ final class MainViewController: baseVC<MainViewModel> {
     }
 }
 
+// MARK: - Extension
 extension MainViewController: hearBtnTableVeiwCellDelegate {
     func heartBtnDidTap(id: String) -> Bool {
         viewModel.heartViewIsVisibleDidTap()
