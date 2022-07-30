@@ -44,6 +44,7 @@ final class MainViewController: baseVC<MainViewModel> {
         self.navigationItem.rightBarButtonItem = plusBtn
         
         navigationController?.navigationBar.barTintColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func addView() {
