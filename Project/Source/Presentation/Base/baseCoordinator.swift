@@ -35,10 +35,6 @@ class baseCoordinator: Coordinator {
         
     }
     
-    func navigate(to step: TabBarStep) {
-        
-    }
-    
     func removeChildCoordinators() {
         childCoordinators.forEach{ $0.removeChildCoordinators() }
         childCoordinators.removeAll()

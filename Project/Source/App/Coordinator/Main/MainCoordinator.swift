@@ -12,11 +12,15 @@ final class MainCoordinator: baseCoordinator {
         switch step {
         case .createPostIsRequired:
             createPostIsRequired()
+            
+        default:
+            return
         }
     }
 }
 // MARK: - extension
 private extension MainCoordinator {
+    
     func createPostIsRequired() {
         let vm = CreatePostViewModel(coordinator: self)
         let vc = CreatePostVC(viewModel: vm)

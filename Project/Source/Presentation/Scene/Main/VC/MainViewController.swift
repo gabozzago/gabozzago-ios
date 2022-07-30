@@ -42,6 +42,8 @@ final class MainViewController: baseVC<MainViewModel> {
         
         self.navigationItem.titleView = maintitleLabel
         self.navigationItem.rightBarButtonItem = plusBtn
+        
+        navigationController?.navigationBar.barTintColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
     }
     
     override func addView() {

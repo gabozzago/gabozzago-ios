@@ -8,10 +8,6 @@ final class MainViewModel: baseViewModel {
         heartViewIsVisible.value.toggle()
     }
     
-    func setMainVC() {
-        coordinator.navigate(to: .mainIsRequired)
-    }
-    
     func pushCreatePostVC() {
         coordinator.navigate(to: .createPostIsRequired)
     }

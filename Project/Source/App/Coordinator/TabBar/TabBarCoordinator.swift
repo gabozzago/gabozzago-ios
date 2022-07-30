@@ -1,6 +1,6 @@
 final class TabBarCoordinator: baseCoordinator {
     
-    override func navigate(to step: TabBarStep) {
+    override func navigate(to step: GabozagoStep) {
         switch step {
         case .mainIsRequired:
             mainIsRequired()
@@ -10,12 +10,15 @@ final class TabBarCoordinator: baseCoordinator {
             likePostIsRequired()
         case .profileIsRequired:
             profileIsRequired()
+        default:
+            return
         }
     }
 }
 
 
 private extension TabBarCoordinator {
+    
     func mainIsRequired() {
         let vm = MainViewModel(coordinator: self)
         let vc = MainViewController(viewModel: vm)
