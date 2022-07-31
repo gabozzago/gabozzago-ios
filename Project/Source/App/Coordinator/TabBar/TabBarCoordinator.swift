@@ -1,5 +1,11 @@
 final class TabBarCoordinator: baseCoordinator {
     
+    override func start() {
+        let vc = TabBarViewController(coordinator: self)
+        
+        self.navigationController.setViewControllers([vc], animated: true)
+    }
+    
     override func navigate(to step: GabozagoStep) {
         switch step {
         case .mainIsRequired:
