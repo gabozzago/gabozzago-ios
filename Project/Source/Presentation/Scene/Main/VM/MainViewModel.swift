@@ -9,7 +9,6 @@ final class MainViewModel: baseViewModel {
     }
     
     func pushCreatePostVC() {
-        coordinator.start()
         coordinator.navigate(to: .createPostIsRequired)
     }
 }
