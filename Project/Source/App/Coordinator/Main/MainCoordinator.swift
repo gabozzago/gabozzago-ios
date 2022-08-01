@@ -1,9 +1,8 @@
-final class MainCoordinator: baseCoordinator {
-    
+import UIKit
+final class MainCoordinator: baseCoordinator{
     // MARK: - Start
     override func start() {
-        let vc = MainViewController(viewModel: .init(coordinator: self))
-        navigationController.viewControllers = [vc]
+       
     }
     
     // MARK: - Navigate
@@ -16,6 +15,15 @@ final class MainCoordinator: baseCoordinator {
             return
         }
     }
+    
+    func startPush() -> UINavigationController {
+        let MainVC = MainViewController(viewModel: .init(coordinator: self))
+        
+        navigationController.setViewControllers([MainVC], animated: true)
+        
+        return navigationController
+    }
+    
 }
 // MARK: - extension
 private extension MainCoordinator {
