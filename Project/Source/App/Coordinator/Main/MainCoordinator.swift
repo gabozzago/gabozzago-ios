@@ -18,10 +18,9 @@ final class MainCoordinator: baseCoordinator{
     
     func startPush() -> UINavigationController {
         let MainVC = MainViewController(viewModel: .init(coordinator: self))
+        let navController = UINavigationController(rootViewController: MainVC)
         
-        navigationController.setViewControllers([MainVC], animated: true)
-        
-        return navigationController
+        return navController
     }
     
 }

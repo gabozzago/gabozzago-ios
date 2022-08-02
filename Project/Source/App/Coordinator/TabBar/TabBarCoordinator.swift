@@ -1,51 +1,42 @@
+import UIKit
 final class TabBarCoordinator: baseCoordinator {
+    var childCoordinator: [Coordinator] = []
     
-    override func start() {
-        let vc = TabBarViewController(coordinator: self)
+    func setTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
         
-        self.navigationController.setViewControllers([vc], animated: true)
-    }
-    
-    override func navigate(to step: GabozagoStep) {
-        switch step {
-        case .mainIsRequired:
-            mainIsRequired()
-        case .searchIsRequired:
-            searchIsRequired()
-        case .likePostIsRequired:
-            likePostIsRequired()
-        case .profileIsRequired:
-            profileIsRequired()
-        default:
-            return
-        }
-    }
-}
-
-
-private extension TabBarCoordinator {
-    
-    func mainIsRequired() {
-        let vm = MainViewModel(coordinator: self)
-        let vc = MainViewController(viewModel: vm)
-        self.navigationController.setViewControllers([vc], animated: true)
-    }
-    
-    func searchIsRequired() {
-        let vm = SearchViewModel(coordinator: self)
-        let vc = SearchViewController(viewModel: vm)
-        self.navigationController.setViewControllers([vc], animated: true)
-    }
-    
-    func likePostIsRequired() {
-        let vm = LikePostViewModel(coordinator: self)
-        let vc = LikePostViewController(viewModel: vm)
-        self.navigationController.setViewControllers([vc], animated: true)
-    }
-    
-    func profileIsRequired() {
-        let vm = ProfileViewModel(coordinator: self)
-        let vc = ProfileViewController(viewModel: vm)
-        self.navigationController.setViewControllers([vc], animated: true)
+        let firstItem = UITabBarItem(title: nil, image: Image.mainImg, tag: 0)
+        let secondItem = UITabBarItem(title: nil, image: Image.searchImg, tag: 1)
+        let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg, tag: 2)
+        let fourItem = UITabBarItem(title: nil, image: Image.profileImg, tag: 3)
+        
+        
+        let firstCoordinator = MainCoordinator(navigationController: navigationController)
+        firstCoordinator.parentCoordinator = self
+        childCoordinator.append(firstCoordinator)
+        let firstVC = firstCoordinator.startPush()
+        firstVC.tabBarItem = firstItem
+        
+        let secondCoordinator = SearchCoordinator(navigationController: navigationController)
+        secondCoordinator.parentCoordinator = self
+        childCoordinator.append(secondCoordinator)
+        let secondVC = secondCoordinator.startPush()
+        secondVC.tabBarItem = secondItem
+        
+        let thirdCoordinator = LikePostCoordinator(navigationController: navigationController)
+        thirdCoordinator.parentCoordinator = self
+        childCoordinator.append(thirdCoordinator)
+        let thirdVC = thirdCoordinator.startPush()
+        thirdVC.tabBarItem = thirdItem
+        
+        let fourCoordinator = ProfileCoordinator(navigationController: navigationController)
+        fourCoordinator.parentCoordinator = self
+        childCoordinator.append(fourCoordinator)
+        let fourVC = fourCoordinator.startPush()
+        fourVC.tabBarItem = fourItem
+        
+        tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourVC]
+        
+        return tabBarController
     }
 }
