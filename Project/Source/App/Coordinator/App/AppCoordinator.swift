@@ -31,6 +31,9 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let tabBarController = TabBarCoordinator(navigationController: navigationController).setTabBarController()
-        self.window?.rootViewController = tabBarController
+        print("hello = \(tabBarController)")
+        self.window?.rootViewController = navigationController
+        self.navigationController.setViewControllers([tabBarController], animated: true)
+
     }
 }

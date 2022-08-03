@@ -1,8 +1,12 @@
 import UIKit
 final class MainCoordinator: baseCoordinator{
     // MARK: - Start
-    override func start() {
-       
+    func startPush() -> UINavigationController {
+        
+        let MainVC = MainViewController(viewModel: .init(coordinator: self))
+        let navController = UINavigationController(rootViewController: MainVC)
+        
+        return navController
     }
     
     // MARK: - Navigate
@@ -16,20 +20,19 @@ final class MainCoordinator: baseCoordinator{
         }
     }
     
-    func startPush() -> UINavigationController {
-        let MainVC = MainViewController(viewModel: .init(coordinator: self))
-        let navController = UINavigationController(rootViewController: MainVC)
-        
-        return navController
-    }
     
 }
 // MARK: - extension
 private extension MainCoordinator {
     
     func createPostIsRequired() {
-        let vm = CreatePostViewModel(coordinator: self)
-        let vc = CreatePostVC(viewModel: vm)
-        self.navigationController.pushViewController(vc, animated: true)
+        print("createPost")
+//        let vc = CreatePostCoordinator(navigationController: navigationController).startPush()
+//        navigationController.pushViewController(vc, animated: true)
+        
+        let vc = CreatePostCoordinator(navigationController: navigationController)
+        vc.parentCoordinator = self
+        childCoordinators.append(vc)
+        vc.pushCreatePostVC()
     }
 }

@@ -2,16 +2,9 @@ import UIKit
 import Then
 import SnapKit
 
-protocol MainVCDelegate: AnyObject {
-    func pushCreatePost()
-}
-
 final class MainViewController: baseVC<MainViewModel> {
     
     // MARK: - Properties
-    weak var delegate: MainVCDelegate?
-    
-    
     private let contentView = UIView()
     
     private let contentScrollView = UIScrollView()

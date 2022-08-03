@@ -4,6 +4,6 @@ class CreatePostVC: baseVC<CreatePostViewModel> {
     
     override func configureVC() {
         
-        view.backgroundColor = .red
+        view.backgroundColor = .blue
     }
 }
