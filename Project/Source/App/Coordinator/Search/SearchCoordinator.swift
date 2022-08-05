@@ -2,11 +2,9 @@ import UIKit
 
 class SearchCoordinator: baseCoordinator {
     
-    func startPush() -> UINavigationController {
+    override func start() {
 
         let searchVC = SearchViewController(viewModel: .init(coordinator: self))
-        let navController = UINavigationController(rootViewController: searchVC)
-        
-        return navController
+        navigationController.pushViewController(searchVC, animated: true)
     }
 }

@@ -6,7 +6,7 @@ class AppCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
     func start(coordinator: Coordinator) {
-        
+        coordinator.start()
     }
     
     func didFinish(coordinator: Coordinator) {
@@ -30,10 +30,11 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let tabBarController = TabBarCoordinator(navigationController: navigationController).setTabBarController()
-        print("hello = \(tabBarController)")
+        let tabBarController = TabBarCoordinator(navigationController: navigationController)
         self.window?.rootViewController = navigationController
-        self.navigationController.setViewControllers([tabBarController], animated: true)
-
+//
+//        let MainCoordinator = MainCoordinator(navigationController: navigationController)
+//        start(coordinator: MainCoordinator)
+        start(coordinator: tabBarController)
     }
 }

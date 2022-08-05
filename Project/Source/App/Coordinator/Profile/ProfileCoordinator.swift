@@ -1,10 +1,8 @@
 import UIKit
 class ProfileCoordinator: baseCoordinator {
-    func startPush() -> UINavigationController {
+    override func start() {
         
         let profileVC = ProfileViewController(viewModel: .init(coordinator: self))
-        let navController = UINavigationController(rootViewController: profileVC)
-        
-        return navController
+        navigationController.pushViewController(profileVC, animated: true)
     }
 }

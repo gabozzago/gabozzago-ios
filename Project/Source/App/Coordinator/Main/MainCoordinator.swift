@@ -1,12 +1,11 @@
 import UIKit
 final class MainCoordinator: baseCoordinator{
     // MARK: - Start
-    func startPush() -> UINavigationController {
+    override func start() {
         
         let MainVC = MainViewController(viewModel: .init(coordinator: self))
-        let navController = UINavigationController(rootViewController: MainVC)
+        navigationController.pushViewController(MainVC, animated: true)
         
-        return navController
     }
     
     // MARK: - Navigate

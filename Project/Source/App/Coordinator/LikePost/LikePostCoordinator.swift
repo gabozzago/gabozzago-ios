@@ -2,12 +2,9 @@ import UIKit
 
 class LikePostCoordinator: baseCoordinator {
     
-    func startPush() -> UINavigationController {
+    override func start() {
         
         let likePostVC = LikePostViewController(viewModel: .init(coordinator: self))
-        let navController = UINavigationController(rootViewController: likePostVC)
-        
-        return navController
+        navigationController.pushViewController(likePostVC, animated: true)
     }
-    
 }
