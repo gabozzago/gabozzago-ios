@@ -32,9 +32,7 @@ class AppCoordinator: Coordinator {
     func start() {
         let tabBarController = TabBarCoordinator(navigationController: navigationController)
         self.window?.rootViewController = navigationController
-//
-//        let MainCoordinator = MainCoordinator(navigationController: navigationController)
-//        start(coordinator: MainCoordinator)
+
         start(coordinator: tabBarController)
     }
 }

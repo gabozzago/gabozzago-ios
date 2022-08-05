@@ -21,14 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.appCoordinator = AppCoordinator(window, navigationController: navVC)
         
         appCoordinator?.start()
-        
-//
-//
-//        window = UIWindow(windowScene: s)
-//        coordinator = TabBarCoordinator(navigationController: navVC)
-//        window?.rootViewController = TabBarViewController(coordinator: coordinator!)
-//        coordinator?.start()
-//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

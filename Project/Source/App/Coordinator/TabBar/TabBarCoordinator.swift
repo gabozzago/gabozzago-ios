@@ -10,7 +10,6 @@ final class TabBarCoordinator: baseCoordinator {
         let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg, tag: 2)
         let fourItem = UITabBarItem(title: nil, image: Image.profileImg, tag: 3)
         
-        
         let firstVC = UINavigationController()
         firstVC.tabBarItem = firstItem
         let firstCoordinator = MainCoordinator(navigationController: firstVC)
@@ -36,14 +35,14 @@ final class TabBarCoordinator: baseCoordinator {
         childCoordinator.append(fourCoordinator)
         
         tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourVC]
-        tabBarController.modalPresentationStyle = .fullScreen
         
-        navigationController.present(tabBarController, animated: true)
-        print("hihi")
+        tabBarController.modalPresentationStyle = .fullScreen
         
         start(coordinator: firstCoordinator)
         start(coordinator: secondCoordinator)
         start(coordinator: thirdCoordinator)
         start(coordinator: fourCoordinator)
+        
+        navigationController.present(tabBarController, animated: true)
     }
 }
