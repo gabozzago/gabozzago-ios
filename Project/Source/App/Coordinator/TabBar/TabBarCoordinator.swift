@@ -43,7 +43,6 @@ final class TabBarCoordinator: baseCoordinator {
         
         tabBarController.tabBar.tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
         tabBarController.tabBar.unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        tabBarController.tabBar.selectedImageTintColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
         tabBarController.tabBar.frame.size.height = 10
         
         tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourVC]
