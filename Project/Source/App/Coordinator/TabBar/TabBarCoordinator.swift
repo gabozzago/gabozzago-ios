@@ -5,6 +5,13 @@ final class TabBarCoordinator: baseCoordinator {
     override func start() {
         
         let tabBarController = UITabBarController()
+        
+//        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+//        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+//        UITabBar.appearance().frame.size.height = 10
+        
+        
+        
         let firstItem = UITabBarItem(title: nil, image: Image.mainImg, tag: 0)
         let secondItem = UITabBarItem(title: nil, image: Image.searchImg, tag: 1)
         let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg, tag: 2)
@@ -33,6 +40,11 @@ final class TabBarCoordinator: baseCoordinator {
         let fourCoordinator = ProfileCoordinator(navigationController: fourVC)
         fourCoordinator.parentCoordinator = self
         childCoordinator.append(fourCoordinator)
+        
+        tabBarController.tabBar.tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        tabBarController.tabBar.unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+        tabBarController.tabBar.selectedImageTintColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
+        tabBarController.tabBar.frame.size.height = 10
         
         tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourVC]
         
