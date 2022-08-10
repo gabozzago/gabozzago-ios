@@ -6,11 +6,10 @@ final class TabBarCoordinator: baseCoordinator {
         
         let tabBarController = UITabBarController()
         
-//        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
-//        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-//        UITabBar.appearance().frame.size.height = 10
-        
-        
+        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
+        UITabBar.appearance().frame.size.height = 10
+        UITabBar.appearance().backgroundColor = .red
         
         let firstItem = UITabBarItem(title: nil, image: Image.mainImg, tag: 0)
         let secondItem = UITabBarItem(title: nil, image: Image.searchImg, tag: 1)

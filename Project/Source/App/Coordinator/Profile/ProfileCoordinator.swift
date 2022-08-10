@@ -2,7 +2,9 @@ import UIKit
 class ProfileCoordinator: baseCoordinator {
     override func start() {
         
-        let profileVC = ProfileViewController(viewModel: .init(coordinator: self))
-        navigationController.pushViewController(profileVC, animated: true)
+        let vm = ProfileViewModel(coordinator: self)
+        let vc = ProfileViewController(viewModel: vm)
+        
+        navigationController.pushViewController(vc, animated: true)
     }
 }

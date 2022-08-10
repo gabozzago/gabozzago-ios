@@ -6,6 +6,7 @@ class CreatePostCoordinator: baseCoordinator {
         
         let vm = CreatePostViewModel(coordinator: self)
         let vc = CreatePostVC(viewModel: vm)
+        
         navigationController.pushViewController(vc, animated: true)
     }
 }

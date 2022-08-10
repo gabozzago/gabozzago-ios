@@ -4,7 +4,9 @@ class LikePostCoordinator: baseCoordinator {
     
     override func start() {
         
-        let likePostVC = LikePostViewController(viewModel: .init(coordinator: self))
-        navigationController.pushViewController(likePostVC, animated: true)
+        let vm = LikePostViewModel(coordinator: self)
+        let vc = LikePostViewController(viewModel: vm)
+        
+        navigationController.pushViewController(vc, animated: true)
     }
 }
