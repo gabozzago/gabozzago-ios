@@ -6,15 +6,14 @@ final class TabBarCoordinator: baseCoordinator {
         
         let tabBarController = UITabBarController()
         
+        let firstItem = UITabBarItem(title: nil, image: Image.mainImg?.withBaselineOffset(fromBottom: 14.0), tag: 0)
+        let secondItem = UITabBarItem(title: nil, image: Image.searchImg?.withBaselineOffset(fromBottom: 14.0), tag: 1)
+        let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg?.withBaselineOffset(fromBottom: 14.0), tag: 2)
+        let fourItem = UITabBarItem(title: nil, image: Image.profileImg?.withBaselineOffset(fromBottom: 14.0), tag: 3)
+        
         UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
         UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        UITabBar.appearance().frame.size.height = 10
         UITabBar.appearance().backgroundColor = .red
-        
-        let firstItem = UITabBarItem(title: nil, image: Image.mainImg, tag: 0)
-        let secondItem = UITabBarItem(title: nil, image: Image.searchImg, tag: 1)
-        let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg, tag: 2)
-        let fourItem = UITabBarItem(title: nil, image: Image.profileImg, tag: 3)
         
         let firstVC = UINavigationController()
         firstVC.tabBarItem = firstItem
@@ -40,12 +39,8 @@ final class TabBarCoordinator: baseCoordinator {
         fourCoordinator.parentCoordinator = self
         childCoordinator.append(fourCoordinator)
         
-        tabBarController.tabBar.tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
-        tabBarController.tabBar.unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        tabBarController.tabBar.frame.size.height = 10
-        
         tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourVC]
-        
+    
         tabBarController.modalPresentationStyle = .fullScreen
         
         start(coordinator: firstCoordinator)

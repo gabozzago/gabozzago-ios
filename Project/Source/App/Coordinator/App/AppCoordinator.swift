@@ -30,6 +30,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        
         let tabBarController = TabBarCoordinator(navigationController: navigationController)
         self.window?.rootViewController = navigationController
 
