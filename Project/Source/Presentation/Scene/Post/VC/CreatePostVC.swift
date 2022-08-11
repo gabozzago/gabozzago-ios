@@ -1,9 +1,4 @@
-import Foundation
+import UIKit
 
 class CreatePostVC: baseVC<CreatePostViewModel> {
-    
-    override func configureVC() {
-        
-        view.backgroundColor = .blue
-    }
 }
