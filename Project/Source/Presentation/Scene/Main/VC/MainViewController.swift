@@ -1,5 +1,4 @@
 import UIKit
 
-class MainViewController: UIViewController {
-    
+class MainViewController: baseVC<MainViewModel> {
 }
