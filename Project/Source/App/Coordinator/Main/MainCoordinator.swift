@@ -1,9 +1,13 @@
-final class MainCoordinator: baseCoordinator {
-    
+import UIKit
+
+final class MainCoordinator: baseCoordinator{
     // MARK: - Start
     override func start() {
-        let vc = MainViewController(viewModel: .init(coordinator: self))
-        navigationController.viewControllers = [vc]
+        
+        let vm = MainViewModel(coordinator: self)
+        let vc = MainViewController(viewModel: vm)
+        
+        navigationController.pushViewController(vc, animated: true)
     }
     
     // MARK: - Navigate
@@ -21,8 +25,10 @@ final class MainCoordinator: baseCoordinator {
 private extension MainCoordinator {
     
     func createPostIsRequired() {
-        let vm = CreatePostViewModel(coordinator: self)
-        let vc = CreatePostVC(viewModel: vm)
-        self.navigationController.pushViewController(vc, animated: true)
+        
+        let vc = CreatePostCoordinator(navigationController: navigationController)
+        vc.parentCoordinator = self
+        childCoordinators.append(vc)
+        vc.pushCreatePostVC()
     }
 }

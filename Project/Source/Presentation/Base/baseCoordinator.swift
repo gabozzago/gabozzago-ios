@@ -16,7 +16,7 @@ class baseCoordinator: Coordinator {
     
     
     func start() {
-        fatalError("Start method should be implemented")
+        
     }
     
     func start(coordinator: Coordinator) {
