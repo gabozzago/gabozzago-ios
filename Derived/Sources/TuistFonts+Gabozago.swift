@@ -15,12 +15,12 @@
 // MARK: - Fonts
 
 // swiftlint:disable identifier_name line_length type_body_length
-public enum GabozagoIOSFontFamily {
+public enum GabozagoFontFamily {
   public enum BmJuaOtf {
-    public static let regular = GabozagoIOSFontConvertible(name: "BMJUAOTF", family: "BM JUA_OTF", path: "BMJUA_otf.otf")
-    public static let all: [GabozagoIOSFontConvertible] = [regular]
+    public static let regular = GabozagoFontConvertible(name: "BMJUAOTF", family: "BM JUA_OTF", path: "BMJUA_otf.otf")
+    public static let all: [GabozagoFontConvertible] = [regular]
   }
-  public static let allCustomFonts: [GabozagoIOSFontConvertible] = [BmJuaOtf.all].flatMap { $0 }
+  public static let allCustomFonts: [GabozagoFontConvertible] = [BmJuaOtf.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
@@ -29,7 +29,7 @@ public enum GabozagoIOSFontFamily {
 
 // MARK: - Implementation Details
 
-public struct GabozagoIOSFontConvertible {
+public struct GabozagoFontConvertible {
   public let name: String
   public let family: String
   public let path: String
@@ -59,8 +59,8 @@ public struct GabozagoIOSFontConvertible {
   }
 }
 
-public extension GabozagoIOSFontConvertible.Font {
-  convenience init?(font: GabozagoIOSFontConvertible, size: CGFloat) {
+public extension GabozagoFontConvertible.Font {
+  convenience init?(font: GabozagoFontConvertible, size: CGFloat) {
     #if os(iOS) || os(tvOS) || os(watchOS)
     if !UIFont.fontNames(forFamilyName: font.family).contains(font.name) {
       font.register()
