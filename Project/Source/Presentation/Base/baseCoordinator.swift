@@ -1,6 +1,7 @@
 import UIKit
 
 class baseCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
     var parentCoordinator: Coordinator?
@@ -15,7 +16,7 @@ class baseCoordinator: Coordinator {
     
     
     func start() {
-        fatalError("Start method should be implemented")
+        
     }
     
     func start(coordinator: Coordinator) {

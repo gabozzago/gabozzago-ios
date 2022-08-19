@@ -1,4 +1,4 @@
 enum GabozagoStep {
-    // Main
-    case mainIsRequired
+    // Post
+    case createPostIsRequired
 }

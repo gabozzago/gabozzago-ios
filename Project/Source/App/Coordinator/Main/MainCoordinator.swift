@@ -1,34 +1,34 @@
-//
-//  MainCoordinator.swift
-//  gabozago-iOS
-//
-//  Created by 민도현 on 2022/07/19.
-//  Copyright © 2022 com.wwg. All rights reserved.
-//
+import UIKit
 
-import Foundation
-
-final class MainCoordinator: baseCoordinator {
-    
+final class MainCoordinator: baseCoordinator{
     // MARK: - Start
     override func start() {
-        let vc = TabBarViewController()
         
-        self.navigationController.setViewControllers([vc], animated: true)
+        let vm = MainViewModel(coordinator: self)
+        let vc = MainViewController(viewModel: vm)
+        
+        navigationController.pushViewController(vc, animated: true)
     }
     
     // MARK: - Navigate
     override func navigate(to step: GabozagoStep) {
         switch step {
-        case .mainIsRequired:
-            navigateToLogin()
+        case .createPostIsRequired:
+            createPostIsRequired()
+            
+        default:
+            return
         }
     }
 }
 // MARK: - extension
 private extension MainCoordinator {
-    func navigateToLogin() {
-        let vc = MainViewController()
-        self.navigationController.setViewControllers([vc], animated: true)
+    
+    func createPostIsRequired() {
+        
+        let vc = CreatePostCoordinator(navigationController: navigationController)
+        vc.parentCoordinator = self
+        childCoordinators.append(vc)
+        vc.pushCreatePostVC()
     }
 }
