@@ -16,21 +16,21 @@
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-public enum GabozagoIOSAsset {
+public enum GabozagoAsset {
   public enum Colors {
-    public static let gabozagoBackGroundColor = GabozagoIOSColors(name: "gabozago_BackGroundColor")
-    public static let gabozagoMainColor = GabozagoIOSColors(name: "gabozago_MainColor")
+    public static let gabozagoBackGroundColor = GabozagoColors(name: "gabozago_BackGroundColor")
+    public static let gabozagoMainColor = GabozagoColors(name: "gabozago_MainColor")
   }
   public enum Images {
-    public static let accentColor = GabozagoIOSColors(name: "AccentColor")
-    public static let tabBarSmile = GabozagoIOSImages(name: "tabBar-smile")
+    public static let accentColor = GabozagoColors(name: "AccentColor")
+    public static let tabBarSmile = GabozagoImages(name: "tabBar-smile")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 // MARK: - Implementation Details
 
-public final class GabozagoIOSColors {
+public final class GabozagoColors {
   public fileprivate(set) var name: String
 
   #if os(macOS)
@@ -52,10 +52,10 @@ public final class GabozagoIOSColors {
   }
 }
 
-public extension GabozagoIOSColors.Color {
+public extension GabozagoColors.Color {
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
-  convenience init?(asset: GabozagoIOSColors) {
-    let bundle = GabozagoIOSResources.bundle
+  convenience init?(asset: GabozagoColors) {
+    let bundle = GabozagoResources.bundle
     #if os(iOS) || os(tvOS)
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
     #elseif os(macOS)
@@ -66,7 +66,7 @@ public extension GabozagoIOSColors.Color {
   }
 }
 
-public struct GabozagoIOSImages {
+public struct GabozagoImages {
   public fileprivate(set) var name: String
 
   #if os(macOS)
@@ -76,7 +76,7 @@ public struct GabozagoIOSImages {
   #endif
 
   public var image: Image {
-    let bundle = GabozagoIOSResources.bundle
+    let bundle = GabozagoResources.bundle
     #if os(iOS) || os(tvOS)
     let image = Image(named: name, in: bundle, compatibleWith: nil)
     #elseif os(macOS)
@@ -91,12 +91,12 @@ public struct GabozagoIOSImages {
   }
 }
 
-public extension GabozagoIOSImages.Image {
+public extension GabozagoImages.Image {
   @available(macOS, deprecated,
-    message: "This initializer is unsafe on macOS, please use the GabozagoIOSImages.image property")
-  convenience init?(asset: GabozagoIOSImages) {
+    message: "This initializer is unsafe on macOS, please use the GabozagoImages.image property")
+  convenience init?(asset: GabozagoImages) {
     #if os(iOS) || os(tvOS)
-    let bundle = GabozagoIOSResources.bundle
+    let bundle = GabozagoResources.bundle
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
     #elseif os(macOS)
     self.init(named: NSImage.Name(asset.name))

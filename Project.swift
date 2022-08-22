@@ -1,7 +1,7 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-let projectName = "gabozago-iOS"
+let projectName = "gabozago"
 let orginazationIden = "com.wwg"
 
 let project = Project.excutable(
