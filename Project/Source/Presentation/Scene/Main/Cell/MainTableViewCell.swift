@@ -38,9 +38,9 @@ final class MainTableViewCell: baseTableViewCell<PostModel> {
         $0.text = "safda"
     }
     
-    private let postDescriptionLabel = UILabel().then {
+    private let locationLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 13)
-        $0.textColor = .init(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
+        $0.textColor = .gray
         $0.text = "description"
     }
     
@@ -68,7 +68,7 @@ final class MainTableViewCell: baseTableViewCell<PostModel> {
     
     override func addView() {
         contentView.addSubViews(bottomContentView, postImageView, heartBtn)
-        bottomContentView.addSubViews(postTitleLabel, postDescriptionLabel)
+        bottomContentView.addSubViews(postTitleLabel, locationLabel)
     }
     
     override func setLayout() {
@@ -94,7 +94,7 @@ final class MainTableViewCell: baseTableViewCell<PostModel> {
             $0.leading.equalToSuperview().inset(16)
         }
         
-        postDescriptionLabel.snp.makeConstraints {
+        locationLabel.snp.makeConstraints {
             $0.top.equalTo(postTitleLabel.snp.bottom).inset(4)
             $0.leading.equalTo(postTitleLabel.snp.leading)
             $0.bottom.equalToSuperview().inset(12)
