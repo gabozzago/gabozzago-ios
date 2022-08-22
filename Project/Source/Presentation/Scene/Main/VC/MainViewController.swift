@@ -11,15 +11,15 @@ final class MainViewController: baseVC<MainViewModel> {
     
     private let maintitleLabel = UILabel().then {
         $0.text = "gabozago"
-        $0.font = UIFont(name: GabozagoIOSFontFamily.BmJuaOtf.regular.name, size: 28)
-        $0.textColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
+        $0.font = UIFont(name: GabozagoFontFamily.BmJuaOtf.regular.name, size: 28)
+        $0.textColor = GabozagoAsset.Colors.gabozagoMainColor.color
     }
     
     private lazy var plusBtn = UIBarButtonItem(image: UIImage(systemName: "plus"),
                                                style: .plain,
                                                target: self,
                                                action: #selector(plusBtnDidTap(_:))).then {
-        $0.tintColor = GabozagoIOSAsset.Colors.gabozagoMainColor.color
+        $0.tintColor = GabozagoAsset.Colors.gabozagoMainColor.color
     }
     
     private let postTableView = UITableView().then() {
@@ -28,7 +28,8 @@ final class MainViewController: baseVC<MainViewModel> {
         $0.rowHeight = 232
         $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = false
-        $0.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        $0.backgroundColor = GabozagoAsset.Colors.gabozagoBackGroundColor.color
+        
     }
     
     // MARK: - Method
@@ -43,12 +44,12 @@ final class MainViewController: baseVC<MainViewModel> {
         self.navigationItem.titleView = maintitleLabel
         self.navigationItem.rightBarButtonItem = plusBtn
         
-        navigationController?.navigationBar.barTintColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        navigationController?.navigationBar.barTintColor = GabozagoAsset.Colors.gabozagoBackGroundColor.color
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func addView() {
-        view.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        view.backgroundColor = GabozagoAsset.Colors.gabozagoBackGroundColor.color
         view.addSubViews(maintitleLabel, postTableView)
     }
     

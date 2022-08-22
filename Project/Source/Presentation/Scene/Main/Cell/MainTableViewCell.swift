@@ -63,7 +63,7 @@ final class MainTableViewCell: baseTableViewCell<MainModel> {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
-        self.backgroundColor = GabozagoIOSAsset.Colors.gabozagoBackGroundColor.color
+        self.backgroundColor = GabozagoAsset.Colors.gabozagoBackGroundColor.color
     }
     
     override func addView() {
