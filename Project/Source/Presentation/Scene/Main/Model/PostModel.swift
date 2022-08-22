@@ -1,6 +1,6 @@
 import UIKit
 
-struct MainModel {
+struct PostModel {
     var id: String
     var title: String
     var image: String

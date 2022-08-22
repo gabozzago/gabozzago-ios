@@ -6,7 +6,7 @@ protocol hearBtnTableVeiwCellDelegate: AnyObject {
     func heartBtnDidTap(id: String) -> Bool
 }
 
-final class MainTableViewCell: baseTableViewCell<MainModel> {
+final class MainTableViewCell: baseTableViewCell<PostModel> {
     
     // MARK: - Properties
     weak var delegate: hearBtnTableVeiwCellDelegate?
