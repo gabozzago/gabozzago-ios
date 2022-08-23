@@ -1,4 +1,0 @@
-import UIKit
-
-struct MainModel {
-}

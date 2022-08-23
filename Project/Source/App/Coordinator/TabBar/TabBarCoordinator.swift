@@ -11,9 +11,8 @@ final class TabBarCoordinator: baseCoordinator {
         let thirdItem = UITabBarItem(title: nil, image: Image.likePostImg?.withBaselineOffset(fromBottom: 14.0), tag: 2)
         let fourItem = UITabBarItem(title: nil, image: Image.profileImg?.withBaselineOffset(fromBottom: 14.0), tag: 3)
         
-        UITabBar.appearance().tintColor = .init(red: 0.39, green: 0.49, blue: 1, alpha: 1)
+        UITabBar.appearance().tintColor = GabozagoAsset.Colors.gabozagoMainColor.color
         UITabBar.appearance().unselectedItemTintColor = .init(red: 0.74, green: 0.77, blue: 0.92, alpha: 1)
-        UITabBar.appearance().backgroundColor = .red
         
         let firstVC = UINavigationController()
         firstVC.tabBarItem = firstItem
