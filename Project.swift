@@ -11,7 +11,6 @@ let project = Project.excutable(
         .Then,
         .SnapKit,
         .GoogleSignIn,
-        .DOFavoriteButton
     ],
     product: .app,
     deploymentTarget: .iOS(targetVersion: "13.5", devices: [.iphone, .ipad]),
@@ -19,6 +18,5 @@ let project = Project.excutable(
         .SPM.Then,
         .SPM.SnapKit,
         .SPM.GoogleSignIn,
-        .SPM.DOFavoriteButton
     ]
 )

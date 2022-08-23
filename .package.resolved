@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleSignIn-iOS",
       "state" : {
-        "revision" : "9450e779619fc184d360c9f7ce61023587f7e1f4",
-        "version" : "6.2.2"
+        "revision" : "5ce850448e89500aca5b095af7247eb46dc0ca18",
+        "version" : "6.2.3"
       }
     },
     {
@@ -48,7 +48,7 @@
     {
       "identity" : "then",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/devxoul/Then",
+      "location" : "https://github.com/devxoul/Then.git",
       "state" : {
         "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
         "version" : "3.0.0"

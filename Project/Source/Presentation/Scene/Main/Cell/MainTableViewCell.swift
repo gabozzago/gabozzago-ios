@@ -47,14 +47,27 @@ final class MainTableViewCell: baseTableViewCell<PostModel> {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Method
+    func animateView(_ viewToAnimate:UIView) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+            viewToAnimate.transform = CGAffineTransform(scaleX: 1.08, y: 1.08)
+        }) { (_) in
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3,
+                           initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+                viewToAnimate.transform = .identity
+            })
+        }
+    }
+    
     @objc private func heartViewDidTap(_ sender: UIButton) {
         let visible = delegate?.heartBtnDidTap(id: model?.id ?? "") ?? false
+        
+        animateView(sender)
         
         heartBtn.setImage(UIImage(systemName: visible ? "heart.fill" : "heart"), for: .normal)
         heartBtn.tintColor = visible ? .init(red: 0.94, green: 0.28, blue: 0.28, alpha: 1) : .black
