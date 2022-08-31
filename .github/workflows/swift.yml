@@ -1,0 +1,26 @@
+name: Swift
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        xcode-version: latest
+    - name: install tuist
+      run: curl -Ls https://install.tuist.io | bash
+    - name: project Generate
+      run: |
+        rm -rf .package.resolved
+        make generate
+    - name: Build
+      run: |
+        xcodebuild -project gabozago.xcodeproj -scheme gabozago -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=latest'
